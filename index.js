@@ -33,17 +33,17 @@ function dispLandmark1(){
         63, 27,
         52, 161,
         81 ,158];
+    
+    let x=[90,97,83,98,124,110,89,80,63,52,81];
+    let y=[152,161,162,158,161,30,14,13,27,161,158];
+    let y2 = [];
 
-    /*
-    let line=tps.(/\r\n|\n/);
-    l.push(line);
-    console.log(l);
-    l.shift();
-    console.log(l);
-    l.pop();
-    console.log(l);
-    */
+    for(let i = 0; i<y.length;i++){
+        let v = 192-y[i];
+        y2.push(v);
+    }
 
+/*
     let x=[];
     let y=[];
     for(let i in l){
@@ -53,10 +53,12 @@ function dispLandmark1(){
             y.push(l[i]);  
         }
     } 
+    
+    */
     for(let i=0; i<=x.length; i++ ){
         var drawImage = image.getContext("2d");
         drawImage.beginPath();
-        drawImage.arc(x[i], y[i], 5, 0, 2 * Math.PI);
+        drawImage.arc(x[i], y2[i], 5, 0, 2 * Math.PI);
         drawImage.fillStyle = "red";
         drawImage.stroke(); 
         drawImage.fill();
