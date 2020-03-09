@@ -1,0 +1,21 @@
+   <script src="index.js"></script>
+        <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+       
+       
+       </script>           
+         <fieldset>
+                <legend> Select a file </legend>
+                <canvas id="img" width="192" height="192 "></canvas> <br>
+
+                <input type='file' id='fileup' multiple="false"
+                    accept="image/*" onchange="upload()" > <br>
+                    <!-- webkitdirecotry permet de selectionner un repertoir
+                    mais attention ne fonctionne pas bien sur tout les serveurs  -->
+                
+                <input type='file' id='land' multiple="false" accept=".TPS, .tps, .csv"> <br>
+                <input type='button' value="LD manuel " onclick="dispLandmark()"><br>
+                <input type='file' id='land1' multiple="false" accept=".TPS, .tps, .csv"><br>
+                <input type='button' value="LD ml" onclick="dispLandmark1()" ><br>
+            </fieldset>
+            
+        </form>
