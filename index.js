@@ -58,7 +58,7 @@ function dispLandmark1(){
     for(let i=0; i<=x.length; i++ ){
         var drawImage = image.getContext("2d");
         drawImage.beginPath();
-        drawImage.arc(x[i], y2[i], 5, 0, 2 * Math.PI);
+        drawImage.arc(x[i], y2[i], 2, 0, 2 * Math.PI);
         drawImage.fillStyle = "red";
         drawImage.stroke(); 
         drawImage.fill();
