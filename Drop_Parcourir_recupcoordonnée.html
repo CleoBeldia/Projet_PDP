@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <div lang=fr>
 
@@ -44,9 +43,29 @@
                     var file = f.files[0],
                     fr = new FileReader();
                     fr.onload = function() { //méthode pour déclaration de fonction
-                        fr=(fr.result).toString();   
-                        res.appendChild(document.createTextNode(fr));                        
-                        console.log(typeof(res));   
+                        fr=(fr.result).toString();  
+
+                       // coord a mettre dans une liste, on enleve premiere et derniere valeur et on met coord dans liste x et y (alternance)
+                        res.appendChild(document.createTextNode(fr));
+                        let b=fr.split(" ");
+                        b=b.toString();
+                        b=b.split('\n');
+                        b=b.toString();
+                        b=b.split(',');
+                        b.shift();
+                        console.log(b);
+                        let x=[];
+                        let y=[];
+                        for (let i=0;i<b.length;i++){
+                            if (i%2==0) {
+                                x.push(parseInt(b[i]));
+                            } else {
+                                y.push(parseInt(b[i]));
+                            }
+                            
+                        }
+                        console.log(x,y);
+                    
                     };
                     fr.readAsText(file);
 
@@ -213,6 +232,10 @@
  
 
             
+
+                    
+                    
+           
 
                     
                     
