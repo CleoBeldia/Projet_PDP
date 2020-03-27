@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="Keywords" content="beetle" /> 
+        <meta name="author" content="HASSAINIA Hanane" />
+        <script src="Projet_1.js"></script>
+        <link rel="stylesheet" href="Projet_1.css">
+        <title>The beetles</title>
+    </head>
+
+    <body>
+
+        <fieldset> <legend>Upload Image and draw points</legend>
+
+            <div>
+                <input id='inputImage' type='file' multiple='true' accept='.JPG' onchange='loadFile(event)'>
+                <input id='inputTps' type='file' accept = '.TPS' >
+
+                <p>
+                    <button id='buttonDraw' onclick="draw1()">Manual</button>
+                </p>
+
+                <p><img id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
+
+                <div id='div' ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <canvas id='canvas' width="192" height="192"> </canvas>
+                </div>
+
+        </fieldset>
+
+    
+    </body>
+</html>
