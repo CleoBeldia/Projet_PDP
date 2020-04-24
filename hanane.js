@@ -76,3 +76,9 @@ function allowDrop(ev) {
     ctx.drawImage(image,0,0);    
     }    
   }
+
+download_beetle = function(image) {
+    // get image URI from canvas object
+    var enregister = canvas.toDataURL("image/jpeg");
+    image.href = enregister;
+  };
