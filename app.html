@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="Keywords" content="beetle" /> 
         <meta name="author" content="beetle" />
-        <script src="app.js"></script>
+        <script src="cleo.js"></script>
         <link rel="stylesheet" href="app.css">
         <title>The beetles</title>
     </head>
@@ -35,10 +35,10 @@
     
                 
 
-                <p><img id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
+                <p><img id='uploadImage' width="384" height="384" draggable="true" draggable="true" ondragstart="drag(event)"></p>
 
                 <div id='div' ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <canvas id='canvas' width="192" height="192"> </canvas>
+                    <canvas id='canvas' width="384" height="384"> </canvas>
                 </div>
                 
                 <a id="download" download="myBeetle.jpeg" href="" onclick="download_beetle(this);">Download to jpeg image</a>
