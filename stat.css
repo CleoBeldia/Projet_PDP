@@ -1,1 +1,33 @@
 
+
+.boutonmenuprincipal {
+background-color: #506a99;
+color: white;
+border: none;
+cursor: pointer;
+padding:20px;
+margin-top:20px;
+font-size: 30px;
+}
+.boutonmenuprincipal:hover {
+background-color: #4c5464;
+
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+.dropdown-child {
+display: none;
+background-color: #615151;
+min-width: 50px;
+}
+.dropdown-child a {
+color: white;
+padding: 20px;
+text-decoration: none;
+display: inline-block;
+}
+.dropdown:hover .dropdown-child {
+display: block;
+}
