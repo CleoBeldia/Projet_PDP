@@ -31,7 +31,7 @@
 
                 <p>
                     <input type="checkbox" id="buttonDraw" onclick="isChecked()"> Manel<br>
-                    <input type="checkbox" id="buttonDraw1" onclick="isChecked()">Landmark<br>
+                    <input type="checkbox" id="buttonDraw1" onclick="isChecked()">Prediction<br>
                     <input type="checkbox" id="dis" onclick="isChecked()">Distance
                 </p>
 
@@ -43,13 +43,12 @@
                 <div id='div' ondrop="drop(event)" ondragover="allowDrop(event)">
                     <canvas id='canvas' width="192" height="192"> </canvas>
                 </div>
-
-
+                
                 <a id="download" download="myBeetle.jpeg" href="" onclick="download_beetle(this);">Download to jpeg image</a>
 
 
         </fieldset>
 
-    
+        <input type="button" value = "Reset" onclick="history.go(0)" />
     </body>
 </html>
