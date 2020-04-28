@@ -1,35 +1,21 @@
 
 
+#menu{
+    width: 90%;
+    list-style: none;
+    text-align: center;
+    
+}
+#menu li{
+    display: inline;
+    margin-right: 2%;
+}
+
+#menu li a {
+    display: inline;
+    padding: 2%;
+    background:  rgb(170, 27, 158);;
+    color: rgb(235, 215, 245) ;
 
 
-.boutonmenuprincipal {
-background-color: #506a99;
-color: white;
-border: none;
-cursor: pointer;
-padding:20px;
-margin-top:20px;
-font-size: 30px;
-}
-.boutonmenuprincipal:hover {
-background-color: #4c5464;
-
-}
-.dropdown {
-position: relative;
-display: inline-block;
-}
-.dropdown-child {
-display: none;
-background-color: #615151;
-min-width: 50px;
-}
-.dropdown-child a {
-color: white;
-padding: 20px;
-text-decoration: none;
-display: inline-block;
-}
-.dropdown:hover .dropdown-child {
-display: block;
-}
+  }
