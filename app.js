@@ -72,7 +72,6 @@ function isChecked() {
         draw(x1,y1,sizepoint,'yellow');
     }else if(a==true && b==false && c==true){
         draw(x,y,sizepoint,'red');
-        distance(x,x1,y,y1);
     }else if(a== true && b==true && c==true){
         draw(x,y,sizepoint,'red');
         draw(x1,y1,sizepoint,'yellow');
@@ -81,9 +80,7 @@ function isChecked() {
         draw(x1,y1,sizepoint,'yellow');
     }else if (a==false && b==true && c==true){
         draw(x1,y1,sizepoint,'yellow');
-        distance(x,x1,y,y1);
-    }else if (a==false && b==false && c==true){
-        distance(x,x1,y,y1);
+        
     }else{
         clearpoint();
     }
