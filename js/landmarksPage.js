@@ -67,24 +67,24 @@ function isChecked() {
     setTimeout(function(){
     if (a==true && b==false && c==false){
         draw(x,y,sizepoint,'red');
-        checkBox2.disabled; 
+        checkBox2.disabled = true; 
     }else if(a==true && b==true && c==false){
         draw(x,y,sizepoint,'red');
         draw(x1,y1,sizepoint,'yellow');
-        checkBox2.disabled;
+        checkBox2.disabled= true;
     }else if(a==true && b==false && c==true){
         draw(x,y,sizepoint,'red');
-        checkBox2.disabled;
+        checkBox2.disabled= true;
     }else if(a== true && b==true && c==true){
         draw(x,y,sizepoint,'red');
         draw(x1,y1,sizepoint,'yellow');
         distance(x,x1,y,y1);
     }else if (a==false && b==true && c==false){
         draw(x1,y1,sizepoint,'yellow');
-        checkBox2.disabled;
+        checkBox2.disabled= true;
     }else if (a==false && b==true && c==true){
         draw(x1,y1,sizepoint,'yellow');
-        checkBox2.disabled;
+        checkBox2.disabled= true;
         
     }else{
         clearpoint();
