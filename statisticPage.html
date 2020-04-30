@@ -51,23 +51,38 @@
         </div>
 
         <div id = 'bodyPage'>  
-            <input type="file" id="fileUpload"/>
-            <!--<input type="button" id="upload" value="Upload" onclick="Upload()" />-->
-            <button onclick="processFile()"> Process </button>
-            <!--<hr/>
-            <div id="dvCSV">
-            </div>
-            <canvas id="chartContainer" width="400" height="400"></div>-->    
-                <button id="renderBtn">
-                    Render
-                </button>
-                <div class="container">
-                    <canvas id="myChart"></canvas>
-                </div> 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        </div>
+               <div id="Choices">
+        <input type="checkbox" id="part1" name="part1" value="elytra" onclick="Checked()">
+        <label for="part1">Elytra</label>
+        <input type="checkbox" id="part2" name="part2" value="pronotum" onclick="Checked()">
+        <label for="part2">pronotum</label>
+        <input type="checkbox" id="part3" name="part3" value="md" onclick="Checked()" >
+        <label for="part3">md</label>
+        <input type="checkbox" id="part4" name="part4" value="mg" onclick="Checked()">
+        <label for="part4">mg</label>
+        <input type="checkbox" id="part5" name="part5" value="head" onclick="Checked()">
+        <label for="part5">head</label>
+    </div>
+    <input type="file" id="fileUpload" multiple/>
+    <button onclick="processFile()"> Process </button>
 
+    <style>
+        .container {
+            width: 50%;
+            height: 50%;
+        }
+    </style>    
+        <button id="renderBtn">
+            Render
+        </button>
+ 
+        <div class="container">
+            <canvas id="myChart"></canvas>
+        </div> 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <div id = 'information'>
         </div>
     </body>
