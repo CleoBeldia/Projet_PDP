@@ -1,71 +1,38 @@
-/*
-function Upload() {
-    var fileUpload = document.getElementById("fileUpload");
-    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-    if (regex.test(fileUpload.value.toLowerCase())) {
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var table = document.createElement("table");
-                var rows = e.target.result.split("\n");
-                for (var i = 0; i < rows.length; i++) {
-                    var cells = rows[i].split(",");
-                    if (cells.length > 1) {
-                        var row = table.insertRow(-1);
-                        for (var j = 0; j < cells.length; j++) {
-                            var cell = row.insertCell(-1);
-                            cell.innerHTML = cells[j];
-                        }
-                    }
-                }
-                var dvCSV = document.getElementById("dvCSV");
-                dvCSV.innerHTML = "";
-                dvCSV.appendChild(table);
-            }
-            reader.readAsText(fileUpload.files[0]);
-        } else {
-            alert("This browser does not support HTML5.");
+function Checked(){
+    var p1 = document.getElementById("part1");
+    var p2 = document.getElementById("part2");
+    var p3 = document.getElementById("part3");
+    var p4 = document.getElementById("part4");
+    var p5 = document.getElementById("part5");
+
+    var a = p1.checked;
+    var b = p2.checked;
+    var c = p3.checked;
+    var d = p4.checked;
+    var e = p5.checked;
+    var choice=0;
+   
+    //setTimeout(function(){
+        if (a==true && b==false && c==false && d==false && e==false){  
+            choice=1;
+        }  
+        if (a==false && b==true && c==false && d==false && e==false){  
+            choice=2;
         }
-    } else {
-        alert("Please upload a valid CSV file.");
-    }
+        if (a==false && b==false && c==true && d==false && e==false){ 
+            choice=3;
+        }
+        if (a==false && b==false && c==false && d==true && e==false){ 
+            choice=4;
+        }
+        if (a==false && b==false && c==false && d==false && e==true){ 
+            choice=5;
+        }
+
+    return choice;
 }
-/*
-/*
-window.onload = function() {
-    var dataPoints = [];
-    var csv = document.getElementById("fileUpload")
-    function getDataPointsFromCSV(csv) {
-        var dataPoints = csvLines = points = [];
-        csvLines = csv.split(/[\r?\n|\r|\n]+/);         
-            
-        for (var i = 0; i < csvLines.length; i++)
-            if (csvLines[i].length > 0) {
-                points = csvLines[i].split(",");
-                console.log(points);
-                dataPoints.push({ 
-                    x: parseFloat(points[0]), 
-                    y: parseFloat(points[1]) 		
-                });
-            }
-        return dataPoints;
-    }
-    function chartMaker(data) {
-    var chart = new CanvasJS.Chart("chartContainer", {
-        title: {
-             text: "Chart from CSV",
-        },
-        data: [{
-             type: "line",
-             dataPoints: getDataPointsFromCSV(data)
-          }]
-     });
-    
-      chart.render();
-};
-}
-*/
-function renderChart(data,labels) {
+
+function renderChart(data,labels) { 
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -89,7 +56,9 @@ function renderChart(data,labels) {
     });
 }
 
-function processFile(){
+
+
+function processFile(){ 
     var file = document.querySelector('#fileUpload').files[0];
     var reader = new FileReader();
     reader.readAsText(file);
@@ -102,14 +71,8 @@ function processFile(){
       var rows = csv.split('\n');
       console.log(rows);
       var cols = rows[0].split(',');
-      console.log(cols)
-      //move line by line
-      /*for (var i = 1; i < rows.length; i++) {
-        //split by separator (,) and get the columns
-        cols = rows[i].split(',');
-        console.log('cols'+cols);
-        */
-        //move column by column
+      console.log(cols);
+
         var DATA = [];
         var LABELS = [];
         for (var j = 1; j < rows.length; j++) {
@@ -118,17 +81,48 @@ function processFile(){
           var value = rows[j].split(',');
           console.log(value[6]);
           DATA.push(value[6]);
-          LABELS.push(value[1]);
+          LABELS.push(value[0]);
         }
         console.log(DATA,LABELS);
         var data=[];
         var labels=[]
-        for (var i = 0 ; i< DATA.length ; i=i+11){
-            data.push(DATA[i]);
-            labels.push(LABELS[i]);
-        }
-        console.log(data);
-        console.log(labels);
+        var choice = Checked();
+        if (choice==1){    
+            for (var i = 0 ; i< DATA.length ; i=i+11){
+                data.push(DATA[i]);
+                labels.push(LABELS[i]);
+            }
         renderChart(data,labels);
+        }
+        if (choice==2){    
+            for (var i = 1 ; i< DATA.length ; i=i+8){
+                data.push(DATA[i]);
+                labels.push(LABELS[i]);
+        }
+        renderChart(data,labels);
+        }
+        if (choice==3){    
+            for (var i = 1 ; i< DATA.length ; i=i+18){
+                data.push(DATA[i]);
+                labels.push(LABELS[i]);
+            }
+        renderChart(data,labels);
+        }
+        if (choice==4){   
+            for (var i = 1 ; i< DATA.length ; i=i+16){
+                data.push(DATA[i]);
+                labels.push(LABELS[i]);
+            }
+        renderChart(data,labels);
+        }
+        if (choice==5){  
+            for (var i = 1 ; i< DATA.length ; i=i+10){
+                data.push(DATA[i]);
+                labels.push(LABELS[i]);
+            }
+        renderChart(data,labels);
+        }
+        console.log(data,labels);
     }
+   
     }
