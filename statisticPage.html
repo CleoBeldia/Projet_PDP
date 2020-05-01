@@ -4,6 +4,8 @@
         <meta charset="utf-8"/>
         <meta name="Keywords" content="beetle" /> 
         <meta name="author" content="beetle" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="js/statistic.js"></script>
         <link rel="stylesheet" href="css/statistic.css">
         <title>The beetles</title>
@@ -20,70 +22,43 @@
             <div id='menu'>
                 <ul>
                     <li id='statistic'><a href="statisticPage.html">Statistiques</a>
-                        <!--<ul class='submenu'>
-                            <li><a>lien 1</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                        </ul>-->
                     </li>
-    
-          
                     <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a>
-                        <!--<ul class='submenu'>
-                            <li><a>lien 1</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                        </ul>-->
                     </li>
-    
                     <li id='home'><a href='homePage.html'>Home</a>
-                        <!--<ul class='submenu'>
-                            <li><a>lien 1</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                            <li><a>lien 2</a></li>
-                        </ul>-->
                     </li>
                 </ul> 
             </div>
-        </div>
 
-        <div id = 'bodyPage'>  
-               <div id="Choices">
-        <input type="checkbox" id="part1" name="part1" value="elytra" onclick="Checked()">
-        <label for="part1">Elytra</label>
-        <input type="checkbox" id="part2" name="part2" value="pronotum" onclick="Checked()">
-        <label for="part2">pronotum</label>
-        <input type="checkbox" id="part3" name="part3" value="md" onclick="Checked()" >
-        <label for="part3">md</label>
-        <input type="checkbox" id="part4" name="part4" value="mg" onclick="Checked()">
-        <label for="part4">mg</label>
-        <input type="checkbox" id="part5" name="part5" value="head" onclick="Checked()">
-        <label for="part5">head</label>
-    </div>
-    <input type="file" id="fileUpload" multiple/>
-    <button onclick="processFile()"> Process </button>
-
-    <style>
-        .container {
-            width: 50%;
-            height: 50%;
-        }
-    </style>    
-        <button id="renderBtn">
-            Render
-        </button>
- 
+    <input id='fileUpload' type='file' accept = '.csv' >
+    <input type="button" value = "Go" onclick='Process()' />
+  
+<h3> Due to the handling of large files it will take some time to load the graphs,<br>
+        please be patient </h3>
+ <!---->
         <div class="container">
-            <canvas id="myChart"></canvas>
-        </div> 
+            <canvas id="myChart1"></canvas>
+            <canvas id="myChart2"></canvas>
+            <canvas id="myChart3"></canvas>
+            <canvas id="myChart4"></canvas>
+            <canvas id="myChart5"></canvas>
+            <canvas id="myChart6"></canvas>
+            <canvas id="myChart7"></canvas>
+            <canvas id="myChart8"></canvas>
+            <canvas id="myChart9"></canvas>
+            <canvas id="myChart10"></canvas>
+            <canvas id="myChart11"></canvas>
+            <canvas id="myChart12"></canvas>
+            <canvas id="myChart13"></canvas>
+            <canvas id="myChart14"></canvas>
+            <canvas id="myChart15"></canvas>
+            <canvas id="myChart16"></canvas>
+            <canvas id="myChart17"></canvas>
+            <canvas id="myChart18"></canvas>
+        </div>  
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <div id = 'information'>
-        </div>
+      
+   
+       
     </body>
 </html>
