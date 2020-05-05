@@ -67,22 +67,35 @@ function isChecked() {
     setTimeout(function(){
     if (a==true && b==false && c==false){
         draw(x,y,sizepoint,'red');
+        affichercoord(x,y,"manuels");
+        clearcoord("prédits")
     }else if(a==true && b==true && c==false){
         draw(x,y,sizepoint,'red');
         draw(x1,y1,sizepoint,'yellow');
+        affichercoord(x,y,"manuels");
+        affichercoord(x1,y1,"prédits");
     }else if(a==true && b==false && c==true){
         draw(x,y,sizepoint,'red');
+        affichercoord(x,y,"manuels");
+        clearcoord("prédits")
     }else if(a== true && b==true && c==true){
         draw(x,y,sizepoint,'red');
         draw(x1,y1,sizepoint,'yellow');
         distance(x,x1,y,y1);
+        affichercoord(x,y,"manuels");
+        affichercoord(x1,y1,"prédits");
     }else if (a==false && b==true && c==false){
         draw(x1,y1,sizepoint,'yellow');
+        affichercoord(x1,y1,"prédits");
+        clearcoord("manuels")
     }else if (a==false && b==true && c==true){
         draw(x1,y1,sizepoint,'yellow');
+        clearcoord("manuels")
         
     }else{
         clearpoint();
+        clearcoord("prédits");
+        clearcoord("manuels");
     }
     }, 5);
 }
@@ -136,6 +149,25 @@ function displayDistance(dist){
     }
 }
 */
+function affichercoord(x,y,type){
+    texte="";  
+    for (let i=0;i<x.length;i++){
+        texte+="[";
+        texte+=x[i]+";";
+        texte+=y[i];
+        texte+="],";
+        }
+    console.log(texte);
+    var coord=document.getElementById(type);
+    coord.innerHTML="<p>Voici les corrdonnées des points "+type+" "+texte+"</p>";
+}
+
+function clearcoord(type){
+    texte=""
+    var coord=document.getElementById(type);
+    coord.innerHTML="<p>"+texte+"</p>";
+}
+
 function allowDrop(ev) {
     ev.preventDefault();
   }
