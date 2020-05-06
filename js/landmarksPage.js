@@ -67,17 +67,21 @@ function isChecked() {
         if (a == true && b == false && c == false) {
             draw(x, y, sizepoint, 'red');
             affichercoord(x, y, "Manual");
-            clearcoord("Predicted")
+            clearcoord("Predicted");
+            clearcoord('Distance');
         } else if (a == true && b == true && c == false) {
             draw(x, y, sizepoint, 'red');
             draw(x1, y1, sizepoint, 'yellow');
             affichercoord(x, y, "Manual");
             affichercoord(x1, y1, "Predicted");
+            clearcoord('Distance');
         } else if (a == true && b == false && c == true) {
             draw(x, y, sizepoint, 'red');
             affichercoord(x, y, "Manual");
-            clearcoord("Predicted")
+            clearcoord("Predicted");
+            clearcoord('Distance');
         } else if (a == true && b == true && c == true) {
+            clearcoord("Distance");
             draw(x, y, sizepoint, 'red');
             draw(x1, y1, sizepoint, 'yellow');
             distance(x, x1, y, y1);
@@ -86,15 +90,17 @@ function isChecked() {
         } else if (a == false && b == true && c == false) {
             draw(x1, y1, sizepoint, 'yellow');
             affichercoord(x1, y1, "Predicted");
-            clearcoord("Manual")
+            clearcoord("Manual");
+            clearcoord('Distance');
         } else if (a == false && b == true && c == true) {
             draw(x1, y1, sizepoint, 'yellow');
-            clearcoord("Manual")
-
+            clearcoord("Manual");
+            clearcoord('Distance');
         } else {
             clearpoint();
             clearcoord("Predicted");
             clearcoord("Manual");
+            clearcoord('Distance');
         }
     }, 5);
 }
@@ -115,6 +121,7 @@ function draw(x, y, size, color) {
 //dist((x, y), (a, b)) = √(x - a)² + (y - b)²
 function distance(x, x1, y, y1) {
     let ctx = document.getElementById('canvas').getContext('2d');
+    clearcoord('Distance');
     for (let i = 0; i < x.length; i++) {
         let moyx = ((x[i] + x1[i]) / 2);
         let moyy = 185 - ((y[i] + y1[i]) / 2);
@@ -124,21 +131,36 @@ function distance(x, x1, y, y1) {
         ctx.font = "10px Arial";
         ctx.fillStyle = "springgreen";
         ctx.fillText(i, moyx * 2, moyy * 2);
-        console.log(dist);
     }
+    var dis= document.getElementById("Distance");
+    dis.innerHTML = "<p> Distance in pixel :"+ "<br>" +dist+ "</p>";
+    
 }
+
+/*
+function affichedis(liste) {
+    texte = "";
+    for (let i = 0; i < liste.length; i++) {
+        texte+= i + " -> ";
+        texte += liste[i] + ",";
+        texte += "\n";
+    }
+    var dis= document.getElementById("Distance");
+    dis.innerHTML = "<p> Distance in pixel :"+ "<br>" +texte+ "</p>";
+}
+*/
+
 
 function affichercoord(x, y, type) {
     texte = "";
     for (let i = 0; i < x.length; i++) {
-        texte+= i + "-> ";
+        texte+= i + "  ";
         texte += "[";
         texte += x[i] + ",";
         texte += y[i];
         texte += "]";
         texte += "\n";
     }
-    console.log(texte);
     var coord = document.getElementById(type);
     coord.innerHTML = "<p> "+ type+ " landmark coordinates"+ "<br> " + texte + "</p>";
 }
@@ -157,8 +179,6 @@ function clearpoint() {
         ctx.drawImage(image, 0, 0, 384, 384);
     }
 }
-
-
 function allowDrop(ev) {
     ev.preventDefault();
 }
