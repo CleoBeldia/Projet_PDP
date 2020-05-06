@@ -2,6 +2,7 @@ var DATA = [];
 var LABELS = [];
 
 
+
 /* When the file is uploaded this function does the preparation of the data, 
 it takes the value of column 1 and last colum and put them into arrays */
 window.onload = function () {
