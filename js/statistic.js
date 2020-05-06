@@ -1,6 +1,9 @@
 var DATA = [];
 var LABELS = [];
 
+
+/* When the file is uploaded this function does the preparation of the data, 
+it takes the value of column 1 and last colum and put them into arrays */
 window.onload = function() {
     let f = document.getElementById('fileUpload');
     f.onchange = function() {
@@ -21,6 +24,8 @@ window.onload = function() {
         fr.readAsText(file);
     }
 }
+
+
 
 function Process() {
     var fileInput = document.getElementById('fileUpload');
