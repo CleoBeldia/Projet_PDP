@@ -1,65 +1,195 @@
-var DATA = [];
-var LABELS = [];
-
-
-
-/* When the file is uploaded this function does the preparation of the data, 
-it takes the value of column 1 and last colum and put them into arrays */
 window.onload = function () {
     let f = document.getElementById('fileUpload');
     f.onchange = function () {
+        var name = f.value.split(/(\\|\/)/g).pop();
+        console.log(name);
         let file = f.files[0];
         fr = new FileReader();
         fr.onload = function (event) {
             var csv = event.target.result;
-            DATA = [];
-            //split and get the rows in an array
             var rows = csv.split('\n');
-            var cols = rows[0].split(',');
-            for (var j = 1; j < rows.length; j++) {
-                var value = rows[j].split(',');
-                DATA.push(value[6]);
-                LABELS.push(value[0]);
+            if (name == 'elytra.csv'){
+                let LM1,LM2,LM3,LM4,LM5,LM6,LM7,LM8, LM9,LM10,LM11 =[];
+                for(let i = 0; i < rows.length; i++){
+                    vali= rows[i].split(',');
+                    col1 = vali[1];
+                    col6 = vali[6];
+                    if (col1%8 == 1){
+                        LM1.push(col6);
+                    }else if (col1%8 == 2){
+                        LM2.push(col6);
+                    }else if (col1%8 == 3){
+                        LM3.push(col6);
+                    }else if (col1%8 == 4){
+                        LM4.push(col6);
+                    }else if (col1%8 == 5){
+                        LM5.push(col6);
+                    }else if (col1%8 == 6){
+                        LM6.push(col6);
+                    }else if (col1%8 == 7){
+                        LM7.push(col6);
+                    }else if (col1%8 == 8){
+                        LM8.push(col6);
+                    }else if (col1%8 == 9){
+                        LM9.push(col6);
+                    }else if (col1%8 == 10){
+                        LM10.push(col6);
+                    }else if (col1%8 == 11){
+                        LM11.push(col6);
+                    }
+                    console.log(LM1,LM2);
+                }
+            
+            }else if(name == 'pronotum.csv'){
+                let LM1,LM2,LM3,LM4,LM5,LM6,LM7,LM8 =[];
+                for(let i = 0; i < rows.length; i++){
+                    vali= rows[i].split(',');
+                    col1 = vali[1];
+                    col6 = vali[6];
+                    if (col1%8 == 1){
+                        LM1.push(col6);
+                    }else if (col1%8 == 2){
+                        LM2.push(col6);
+                    }else if (col1%8 == 3){
+                        LM3.push(col6);
+                    }else if (col1%8 == 4){
+                        LM4.push(col6);
+                    }else if (col1%8 == 5){
+                        LM5.push(col6);
+                    }else if (col1%8 == 6){
+                        LM6.push(col6);
+                    }else if (col1%8 == 7){
+                        LM7.push(col6);
+                    }else if (col1%8 == 8){
+                        LM8.push(col6);
+                    }
+                }
+
+            }else if(name == 'md.csv'){
+                let LM1,LM2,LM3,LM4,LM5,LM6,LM7,LM8, LM9,LM10,LM11
+                ,LM12,LM13,LM14,LM15,LM16,LM17,LM18 =[];
+                for(let i = 0; i < rows.length; i++){
+                    vali= rows[i].split(',');
+                    col1 = vali[1];
+                    col6 = vali[6];
+                    if (col1%8 == 1){
+                        LM1.push(col6);
+                    }else if (col1%8 == 2){
+                        LM2.push(col6);
+                    }else if (col1%8 == 3){
+                        LM3.push(col6);
+                    }else if (col1%8 == 4){
+                        LM4.push(col6);
+                    }else if (col1%8 == 5){
+                        LM5.push(col6);
+                    }else if (col1%8 == 6){
+                        LM6.push(col6);
+                    }else if (col1%8 == 7){
+                        LM7.push(col6);
+                    }else if (col1%8 == 8){
+                        LM8.push(col6);
+                    }else if (col1%8 == 9){
+                        LM9.push(col6);
+                    }else if (col1%8 == 10){
+                        LM10.push(col6);
+                    }else if (col1%8 == 11){
+                        LM11.push(col6);
+                    }else if (col1%8 == 12){
+                        LM12.push(col6);
+                    }else if (col1%8 == 13){
+                        LM13.push(col6);
+                    }else if (col1%8 == 14){
+                        LM14.push(col6);
+                    }else if (col1%8 == 15){
+                        LM15.push(col6);
+                    }else if (col1%8 == 16){
+                        LM16.push(col6);
+                    }else if (col1%8 == 17){
+                        LM17.push(col6);
+                    }else if (col1%8 == 18){
+                        LM18.push(col6);
+                    }
+                }
+
+            }else if(name == 'mg.csv'){
+                let LM1,LM2,LM3,LM4,LM5,LM6,LM7,LM8, LM9,LM10,LM11
+                ,LM12,LM13,LM14,LM15,LM16=[];
+                for(let i = 0; i < rows.length; i++){
+                    vali= rows[i].split(',');
+                    col1 = vali[1];
+                    col6 = vali[6];
+                    if (col1%8 == 1){
+                        LM1.push(col6);
+                    }else if (col1%8 == 2){
+                        LM2.push(col6);
+                    }else if (col1%8 == 3){
+                        LM3.push(col6);
+                    }else if (col1%8 == 4){
+                        LM4.push(col6);
+                    }else if (col1%8 == 5){
+                        LM5.push(col6);
+                    }else if (col1%8 == 6){
+                        LM6.push(col6);
+                    }else if (col1%8 == 7){
+                        LM7.push(col6);
+                    }else if (col1%8 == 8){
+                        LM8.push(col6);
+                    }else if (col1%8 == 9){
+                        LM9.push(col6);
+                    }else if (col1%8 == 10){
+                        LM10.push(col6);
+                    }else if (col1%8 == 11){
+                        LM11.push(col6);
+                    }else if (col1%8 == 12){
+                        LM12.push(col6);
+                    }else if (col1%8 == 13){
+                        LM13.push(col6);
+                    }else if (col1%8 == 14){
+                        LM14.push(col6);
+                    }else if (col1%8 == 15){
+                        LM15.push(col6);
+                    }else if (col1%8 == 16){
+                        LM16.push(col6);
+                    }
+                }
+                
+            }else if(name == 'tete.csv'){
+                let LM1,LM2,LM3,LM4,LM5,LM6,LM7,LM8, LM9,LM10 =[];
+                for(let i = 0; i < rows.length; i++){
+                    vali= rows[i].split(',');
+                    col1 = vali[1];
+                    col6 = vali[6];
+                    if (col1%8 == 1){
+                        LM1.push(col6);
+                    }else if (col1%8 == 2){
+                        LM2.push(col6);
+                    }else if (col1%8 == 3){
+                        LM3.push(col6);
+                    }else if (col1%8 == 4){
+                        LM4.push(col6);
+                    }else if (col1%8 == 5){
+                        LM5.push(col6);
+                    }else if (col1%8 == 6){
+                        LM6.push(col6);
+                    }else if (col1%8 == 7){
+                        LM7.push(col6);
+                    }else if (col1%8 == 8){
+                        LM8.push(col6);
+                    }else if (col1%8 == 9){
+                        LM9.push(col6);
+                    }else if (col1%8 == 10){
+                        LM10.push(col6);
+                    }
+                }
+
+            }else {
+                alert('pls upload the right file');
+            }
+            
+            
             }
         };
-        fr.readAsText(file);
-    }
-}
-
-
-
-function Process() {
-    var fileInput = document.getElementById('fileUpload');
-    var file = fileInput.value.split(/(\\|\/)/g).pop();
-    console.log(file);
-    console.log(DATA, LABELS);
-    if (file == 'elytra.csv') {
-        for (var j = 0; j < 11; j++) {
-            graph(DATA, LABELS, 11, j);
-        }
-    }
-    if (file == 'pronotum.csv') {
-        for (var k = 0; k < 8; k++) {
-            graph(DATA, LABELS, 8, k);
-        }
-    }
-    if (file == 'md.csv') {
-        for (var l = 0; l < 18; l++) {
-            graph(DATA, LABELS, 18, l);
-        }
-
-    }
-    if (file == 'mg.csv') {
-        for (var m = 0; m < 16; m++) {
-            graph(DATA, LABELS, 16, m);
-        }
-
-    }
-    if (file == 'tete.csv') {
-        for (var n = 0; n < 10; n++) {
-            graph(DATA, LABELS, 10, n);
-        }
-    }
+    fr.readAsText(file);
 }
 
 function renderChart(data, labels, landnb, canvas) {
@@ -85,7 +215,6 @@ function renderChart(data, labels, landnb, canvas) {
         }
     });
 }
-
 
 function graph(DATA, LABELS, LandmarkNb, j) {
     var data = [];
