@@ -20,7 +20,7 @@ function listpoint(third, x, y) {
         }
     }
 }
-window.onload = function () {
+window.onload = function loadTPS() {
     let f = document.getElementById('inputTps');
     f.onchange = function () {
         let file = f.files[0];
