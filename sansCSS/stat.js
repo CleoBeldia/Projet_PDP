@@ -51,14 +51,14 @@ window.onload = function() {
         return dataPoints;
     }
 
-    function chartMaker(data) {
+    function chartMaker(DATA[i]) {
     var chart = new CanvasJS.Chart("chartContainer", {
         title: {
              text: "Chart from CSV",
         },
         data: [{
              type: "line",
-             dataPoints: getDataPointsFromCSV(data)
+             dataPoints: getDataPointsFromCSV(DATA[i])
           }]
      });
     
@@ -129,7 +129,7 @@ function processFile(){
             data.push(DATA[i]);
             labels.push(LABELS[i]);
         }
-        console.log(data);
+        console.log(DATA[i]);
         console.log(labels);
         renderChart(data,labels);
     }

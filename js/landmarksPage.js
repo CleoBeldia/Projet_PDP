@@ -190,7 +190,7 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    ev.target.appendChild(document.getElementById(DATA[i]));
     let ctx = document.getElementById('canvas').getContext('2d');
     let image = new Image();
     let input = document.getElementById('inputImage');
