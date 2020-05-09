@@ -133,7 +133,7 @@ function distance(x, x1, y, y1) {
         ctx.fillText(i, moyx * 2, moyy * 2);
     }
     var dis= document.getElementById("Distance");
-    dis.innerHTML = "<p> Distance in pixel :"+ "<br>" +dist+ "</p>";
+    dis.innerHTML = "<p> Distance in pixel :"+ "<br>" +dist.splice(0,x.length-1)+ "</p>";
     
 }
 
