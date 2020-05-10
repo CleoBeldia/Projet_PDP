@@ -30,7 +30,7 @@ function Process() {
         let LM1 = [],LM2 = [],LM3 = [],LM4 = [],LM5 = [],LM6 = [],LM7 = [],LM8 = [],LM9 = [],LM10 = [],LM11 = [];
         let LM12 =[], LM13 =[], LM14 =[], LM15 =[], LM16 =[], LM17 =[], LM18 =[];
         let L =[]
-        for (let j = 0 ; j<293;j++){
+        for (let j = 0 ; j<294;j++){
             L.push(j);
         }
         for(let i=0; i<LAND.length;i++){
@@ -72,31 +72,52 @@ function Process() {
                 LM18.push(DATA[i]);
             }
         }
-        renderChart(LM1, L, 'L1');
-        renderChart(LM2, L, 'L2');
-        renderChart(LM3, L, 'L3');
-        renderChart(LM4, L, 'L4');
+        if (LM1.length!=0){
+            renderChart(LM1, L, 'L1');
+        }
+        if (LM2.length!=0){
+            renderChart(LM2, L, 'L2');
+        }
+        if (LM3.length!=0){
+            renderChart(LM3, L, 'L3');
+        }if (LM4.length!=0){
+            renderChart(LM4, L, 'L4');
+        }if (LM15.length!=0){    
         renderChart(LM5, L, 'L5');
+        }if (LM6.length!=0){    
         renderChart(LM6, L, 'L6');
+        }if (LM7.length!=0){    
         renderChart(LM7, L, 'L7');
+        }if (LM8.length!=0){    
         renderChart(LM8, L, 'L8');
+        }if (LM9.length!=0){    
         renderChart(LM9, L, 'L9');
+        }if (LM10.length!=0){    
         renderChart(LM10, L, 'L10');
+        }if (LM11.length!=0){    
         renderChart(LM11, L, 'L11');
+        }if (LM12.length!=0){    
         renderChart(LM12, L, 'L12');
+        }if (LM13.length!=0){    
         renderChart(LM13, L, 'L13');
+        }if (LM14.length!=0){    
         renderChart(LM14, L, 'L14');
+        }if (LM15.length!=0){    
         renderChart(LM15, L, 'L15');
+        }if (LM16.length!=0){    
         renderChart(LM16, L, 'L16');
-        renderChart(LM17, L, 'L17');
+        }if (LM17.length!=0){    
+            renderChart(LM17, L, 'L17');
+        }if (LM18.length!=0){    
         renderChart(LM18, L, 'L18');
-       
+         }
     }
     
 
 function renderChart(data, labels, name) {
     var divis = document.getElementById("container");
     var ctx = document.createElement("canvas");
+    ctx.setAttribute("class", "graph");
     ctx.setAttribute("id", name);
     divis.appendChild(ctx);
     ctx.getContext("2d");
@@ -104,10 +125,10 @@ function renderChart(data, labels, name) {
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
+            labels: labels,//x
             datasets: [{
                 label: name, //name of the Graph
-                data: data,
+                data: data,//y
             }]
         },
         options: {
@@ -122,3 +143,4 @@ function renderChart(data, labels, name) {
         }
     });
 }
+
