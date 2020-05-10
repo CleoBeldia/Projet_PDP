@@ -27,11 +27,8 @@ window.onload = function () {
 }
 
 function Process() {
-    var fileInput = document.getElementById('fileUpload');
-    var file = fileInput.value.split(/(\\|\/)/g).pop();
-    console.log(file);
-    if (file == 'elytra.csv') {
         let LM1 = [],LM2 = [],LM3 = [],LM4 = [],LM5 = [],LM6 = [],LM7 = [],LM8 = [],LM9 = [],LM10 = [],LM11 = [];
+        let LM12 =[], LM13 =[], LM14 =[], LM15 =[], LM16 =[], LM17 =[], LM18 =[];
         let L =[]
         for (let j = 0 ; j<293;j++){
             L.push(j);
@@ -59,6 +56,20 @@ function Process() {
                 LM10.push(DATA[i]);
             } else if (LAND[i] =='11') {
                 LM11.push(DATA[i]);
+            } else if (LAND[i] =='12') {
+                LM12.push(DATA[i]);
+            } else if (LAND[i] =='13') {
+                LM13.push(DATA[i]);
+            } else if (LAND[i] =='14') {
+                LM14.push(DATA[i]);
+            } else if (LAND[i] =='15') {
+                LM15.push(DATA[i]);
+            } else if (LAND[i] =='16') {
+                LM16.push(DATA[i]);
+            } else if (LAND[i] =='17') {
+                LM17.push(DATA[i]);
+            } else if (LAND[i] =='18') {
+                LM18.push(DATA[i]);
             }
         }
         renderChart(LM1, L, 'L1');
@@ -72,11 +83,13 @@ function Process() {
         renderChart(LM9, L, 'L9');
         renderChart(LM10, L, 'L10');
         renderChart(LM11, L, 'L11');
-
-
-    } else {
-        alert('pls upload the right file');
-    }
+        renderChart(LM12, L, 'L12');
+        renderChart(LM13, L, 'L13');
+        renderChart(LM14, L, 'L14');
+        renderChart(LM15, L, 'L15');
+        renderChart(LM16, L, 'L16');
+        renderChart(LM17, L, 'L17');
+        renderChart(LM18, L, 'L18');
        
     }
     
