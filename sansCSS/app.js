@@ -57,12 +57,12 @@ window.onload = function() {
 
 
 function isChecked() {
-    var checkBox = document.getElementById("buttonDraw");
-    var checkBox1 = document.getElementById("buttonDraw1");
-    var checkBox2 = document.getElementById("dis");
-    var a = checkBox.checked;
-    var b = checkBox1.checked;
-    var c = checkBox2.checked;
+    let checkBox = document.getElementById("buttonDraw");
+    let checkBox1 = document.getElementById("buttonDraw1");
+    let checkBox2 = document.getElementById("dis");
+    let a = checkBox.checked;
+    let b = checkBox1.checked;
+    let c = checkBox2.checked;
     clearpoint();
     setTimeout(function(){
     if (a==true && b==false && c==false){
@@ -146,7 +146,7 @@ function allowDrop(ev) {
 
   function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     let ctx = document.getElementById('canvas').getContext('2d');
     let image = new Image();
@@ -158,6 +158,6 @@ function allowDrop(ev) {
   }
 
 download_beetle = function(image) {
-    var enregister = canvas.toDataURL("image/jpeg");
+    let enregister = canvas.toDataURL("image/jpeg");
     image.href = enregister;
   };

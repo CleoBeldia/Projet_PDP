@@ -1,5 +1,5 @@
-var DATA = [];
-var LAND =[];
+let DATA = [];
+let LAND =[];
 
 /* When the file is uploaded this function does the preparation of the data, 
 it takes the value of column 1 and last colum and put them into arrays */
@@ -9,13 +9,13 @@ window.onload = function () {
         let file = f.files[0];
         fr = new FileReader();
         fr.onload = function (event) {
-            var csv = event.target.result;
+            let csv = event.target.result;
             DATA = [];
             //split and get the rows in an array
-            var rows = csv.split('\n');
-            var cols = rows[0].split(',');
-            for (var j = 1; j < rows.length; j++) {
-                var value = rows[j].split(',');
+            let rows = csv.split('\n');
+            let cols = rows[0].split(',');
+            for (let j = 1; j < rows.length; j++) {
+                let value = rows[j].split(',');
                 DATA.push(value[6]);
                 LAND.push(value[1]);
             }
@@ -114,14 +114,14 @@ function Process() {
     
 
 function renderChart(data, labels, name) {
-    var divis = document.getElementById("container");
-    var ctx = document.createElement("canvas");
+    let divis = document.getElementById("container");
+    let ctx = document.createElement("canvas");
     ctx.setAttribute("class", "graph");
     ctx.setAttribute("id", name);
     divis.appendChild(ctx);
     ctx.getContext("2d");
 
-    var myChart = new Chart(ctx, {
+    let myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,//x

@@ -56,12 +56,12 @@ window.onload = function () {
 
 
 function isChecked() {
-    var checkBox = document.getElementById("buttonDraw");
-    var checkBox1 = document.getElementById("buttonDraw1");
-    var checkBox2 = document.getElementById("dis");
-    var a = checkBox.checked;
-    var b = checkBox1.checked;
-    var c = checkBox2.checked;
+    let checkBox = document.getElementById("buttonDraw");
+    let checkBox1 = document.getElementById("buttonDraw1");
+    let checkBox2 = document.getElementById("dis");
+    let a = checkBox.checked;
+    let b = checkBox1.checked;
+    let c = checkBox2.checked;
     clearpoint();
     setTimeout(function () {
         if (a == true && b == false && c == false) {
@@ -121,6 +121,7 @@ function draw(x, y, size, color) {
 //dist((x, y), (a, b)) = √(x - a)² + (y - b)²
 function distance(x, x1, y, y1) {
     let ctx = document.getElementById('canvas').getContext('2d');
+    let dis = document.getElementById("Distance");
     clearcoord('Distance');
     for (let i = 0; i < x.length; i++) {
         let moyx = ((x[i] + x1[i]) / 2);
@@ -132,44 +133,28 @@ function distance(x, x1, y, y1) {
         ctx.fillStyle = "springgreen";
         ctx.fillText(i, moyx * 2, moyy * 2);
     }
-    var dis= document.getElementById("Distance");
-    dis.innerHTML = "<p> Distance in pixel :"+ "<br>"+dist.splice(x.length-1)+ "</p>";
-    
+    dis.innerHTML = "<p> Distance in pixel :" + "<br>" + dist.splice(x.length) + "</p>";
 }
-
-/*
-function affichedis(liste) {
-    texte = "";
-    for (let i = 0; i < liste.length; i++) {
-        texte+= i + " -> ";
-        texte += liste[i] + ",";
-        texte += "\n";
-    }
-    var dis= document.getElementById("Distance");
-    dis.innerHTML = "<p> Distance in pixel :"+ "<br>" +texte+ "</p>";
-}
-*/
-
 
 function affichercoord(x, y, type) {
-    texte = "";
+    let coord = document.getElementById(type);
+    let texte = "";
     for (let i = 0; i < x.length; i++) {
-        texte+= i + "  ";
+        texte += i + "->";
         texte += "[";
         texte += x[i] + ",";
         texte += y[i];
         texte += "]";
-        texte += "\n";
     }
-    var coord = document.getElementById(type);
-    coord.innerHTML = "<p> "+ type+ " landmark coordinates"+ "<br> " + texte + "</p>";
+    coord.innerHTML = "<p> " + type + " landmark coordinates" + "<br> " + texte + "</p>";
 }
 
 function clearcoord(type) {
     texte = ""
-    var coord = document.getElementById(type);
+    let coord = document.getElementById(type);
     coord.innerHTML = "<p>" + texte + "</p>";
 }
+
 function clearpoint() {
     let ctx = document.getElementById('canvas').getContext('2d');
     let image = new Image();
@@ -179,6 +164,7 @@ function clearpoint() {
         ctx.drawImage(image, 0, 0, 384, 384);
     }
 }
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -189,7 +175,7 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
 
     ev.target.appendChild(document.getElementById(data));
     let ctx = document.getElementById('canvas').getContext('2d');
@@ -202,6 +188,6 @@ function drop(ev) {
 }
 
 download_beetle = function (image) {
-    var enregister = canvas.toDataURL("image/jpeg");
+    let enregister = canvas.toDataURL("image/jpeg");
     image.href = enregister;
 };
