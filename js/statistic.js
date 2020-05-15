@@ -82,33 +82,33 @@ function Process() {
         }if (LM4.length!=0){
             renderChart(LM4, L, 'L4');
         }if (LM15.length!=0){    
-        renderChart(LM5, L, 'L5');
+         renderChart(LM5, L, 'L5');
         }if (LM6.length!=0){    
-        renderChart(LM6, L, 'L6');
+            renderChart(LM6, L, 'L6');
         }if (LM7.length!=0){    
-        renderChart(LM7, L, 'L7');
+            renderChart(LM7, L, 'L7');
         }if (LM8.length!=0){    
-        renderChart(LM8, L, 'L8');
+            renderChart(LM8, L, 'L8');
         }if (LM9.length!=0){    
-        renderChart(LM9, L, 'L9');
+            renderChart(LM9, L, 'L9');
         }if (LM10.length!=0){    
-        renderChart(LM10, L, 'L10');
+            renderChart(LM10, L, 'L10');
         }if (LM11.length!=0){    
-        renderChart(LM11, L, 'L11');
+         renderChart(LM11, L, 'L11');
         }if (LM12.length!=0){    
-        renderChart(LM12, L, 'L12');
+            renderChart(LM12, L, 'L12');
         }if (LM13.length!=0){    
-        renderChart(LM13, L, 'L13');
+            renderChart(LM13, L, 'L13');
         }if (LM14.length!=0){    
-        renderChart(LM14, L, 'L14');
+            renderChart(LM14, L, 'L14');
         }if (LM15.length!=0){    
-        renderChart(LM15, L, 'L15');
+            renderChart(LM15, L, 'L15');
         }if (LM16.length!=0){    
-        renderChart(LM16, L, 'L16');
+            renderChart(LM16, L, 'L16');
         }if (LM17.length!=0){    
             renderChart(LM17, L, 'L17');
         }if (LM18.length!=0){    
-        renderChart(LM18, L, 'L18');
+            renderChart(LM18, L, 'L18');
          }
     }
     
