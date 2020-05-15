@@ -143,3 +143,6 @@ function renderChart(data, labels, name) {
     });
 }
 
+function MeanGraph(){
+    
+}
