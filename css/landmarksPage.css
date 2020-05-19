@@ -21,13 +21,18 @@ body {
 #head {
     background-color: rgb(95, 95, 95);
     color: white;
+    margin: 0;
 }
 
 #logo {
-    width: 7%;
+    z-index: 0;
+    width: 110px;
     float: left;
 }
 
+#logo {
+    max-width: 100%;
+}
 #titre {
     padding-top: 2%;
     font-size: 190%;
@@ -47,6 +52,10 @@ body {
 #menu {
     width: 100%;
     background-color: rgb(95, 95, 95);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: 0;
 }
 
 #menu > ul {
@@ -67,6 +76,7 @@ body {
     margin-right: 2%;
     background-color: teal;
     color: white;
+    box-shadow: 2px 2px 10px red(5, 94, 105);
 }
 
 #menu li {
@@ -75,10 +85,9 @@ body {
 }
 
 #menu > ul > li > a {
-    padding: 20px 30px;
+    padding: 15px 30px;
     color: #FFF;
 }
-
 
 #menu a {
     display: inline-block;
@@ -93,18 +102,14 @@ body {
     padding: 0px;
     z-index: 500;
 }
-
-
 .submenu li{
     border-bottom: 1px solid #CCC;
 }
-
 .submenu li a{
     padding : 15px 30px; 
     font-size : 13px; 
     color: #222538;
     text-align: center;
-
 }
 */
 
@@ -125,7 +130,8 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY */
 
 #canvas {
-    border: 1px solid black;
+    border: 1.5px dashed grey;
+    text-align: center;
 }
 
 #bodyPage { 
@@ -136,15 +142,325 @@ body {
 }
 
 #menuD {
+    padding-top: 20%;
     flex: 5%;
     background-color: teal;
     padding: 20px;
-
+    text-align: center;
   }
 
 #application {   
     flex: 70%;
     background-color: white;
     padding: 20px;
+    text-align: center;
+}
 
+/*CSS PARTIE GAUCHE BLEU*/
+
+.choix {
+    display : none;
+}
+
+#labelb {
+    margin-top: 3%;
+}
+.input_it{
+    color : white;
+    border : rgb(143, 142, 142) 1px solid;
+    background-color: rgb(143, 142, 142);
+    margin-top : 5%;
+    margin-bottom: 5%;
+    padding-top:4% ;
+    padding-bottom:4% ;
+    box-shadow: 2px 2px 10px rgb(5, 94, 105);
+}
+
+.input_it:hover {
+    border-color: white;
+    background-color: white;
+    color: teal;
+}
+
+#uploadImage {
+    padding-top : 7%;
+    padding-bottom : 7%;
+}
+
+#reset {
+    font-weight: bolder;
+    font-size: 90%;
+    color : rgb(158, 25, 25);
+    border : white 1px solid;
+    border-radius: 50px;
+    background-color: white;
+    margin-top : 5%;
+    margin-bottom: 5%;
+    padding-top:3% ;
+    padding-bottom:3% ;
+    padding-left: 7%;
+    padding-right: 7%;
+    box-shadow: 2px 2px 10px rgb(5, 94, 105);
+}
+
+#reset:hover {
+    color : white;
+    background-color: rgb(158, 25, 25);
+    border-color: rgb(158, 25, 25);
+}
+
+/* PARTIE BLANCHE AVEC IMAGE */
+
+#div {
+    margin-bottom: 3%;
+}
+
+#download {
+    border: teal solid 1px;
+    background-color: teal;
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    box-shadow: 3px 3px 10px grey;
+}
+
+#download:hover {
+    border-color: rgb(158, 25, 25);
+    background-color: rgb(158, 25, 25);
+    color: white;
+    font-weight: bold;
+}
+
+/*desing intérieur canvas*/
+
+#dragdroplogo {
+    display : none; 
+}
+
+/* design checkbox */
+
+.inputCheckBox{
+    display: none;
+}
+
+.checklabel {
+    margin-left : 2%; 
+    margin-right : 2%;
+    background-color: rgb(175, 88, 88);
+    color : white;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top : 1%;
+    padding-bottom : 1%;
+    border-radius: 50px;
+}
+
+.checklabel:hover {
+    background-color: rgb(112, 43, 43);
+    color : white;
+}
+
+#labelCheckBox {
+    margin-top : 5%; 
+    margin-bottom : 3%; 
+}
+
+#buttonDraw:checked ~ #check1{
+    background-color: rgb(71, 140, 230);
+    color: white;
+}
+
+#buttonDraw1:checked ~ #check2{
+    background-color: rgb(71, 140, 230);
+    color: white;
+}
+
+#dis:checked ~ #check3{
+    background-color: rgb(71, 140, 230);
+    color: white;
+}
+
+/*partie blanc partage */
+
+
+#data {
+    margin-top: 4%;
+    text-align: center;
+}
+
+#data table {
+    text-align: center;
+    display: none;
+}
+
+#canvas_landmark {
+text-align: center;
+}
+
+
+/*design tableau */
+table {
+    border: 0.1px teal solid;
+    border-collapse: collapse;
+    color: white;
+  }
+
+
+th {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    border-right: white 1px solid;
+    background-color: teal;
+}
+
+td {
+    text-align: center;
+    padding : 10px; 
+    border-right: 0.1px teal solid;
+    border-left: 0.1px teal solid;
+
+    color: teal;
+}
+
+.row_none {
+    color: teal;
+}
+
+.column_border_none {
+    border-bottom-color: teal;
+}
+/* desing TO DO */
+
+#frise{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    padding: 0.2%;
+    margin-top: 2%;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+    border: dashed 2px rgb(175, 88, 88);
+}
+
+#frise p{
+    margin : 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top : 1%;
+    padding-bottom : 1%;
+    display: inline-block;
+    width: 40%;
+    padding: 2%;
+    background-color: teal;
+    border : teal 1px solid;
+    color: white;
+    border-radius: 0px 50px 50px 0px;
+    box-shadow: 5px 5px 10px rgb(199, 199, 199);
+    display: none;
+
+}
+
+#frise #do_tps{
+    display: inline-block;
+}
+#frise .nb_steps {
+    color: rgb(1, 49, 49);
+    font-weight: bold;
+    font-style: oblique;
+    padding-right: 3%;
+    text-align: left;
+}
+
+#load_gras, #reset_gras{
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+
+#information {
+    background-color:rgb(175, 88, 88);
+    display: flex;
+}
+
+#information div {
+    padding :3%;
+    text-align: center;
+    color: white;
+    min-width: 200px;
+}
+
+#qui {
+    flex: auto;
+}
+
+#contact{
+    flex :auto;
+}
+
+#carte {
+    flex: auto;
+}
+
+
+#information  h3 {
+    border-bottom: rgb(255, 159, 159) 1px solid;
+    padding-bottom: 4%;
+    color: rgb(255, 159, 159);
+}
+
+
+#information div p {
+    padding-top: 3%;
+    padding-bottom: 4.4%;
+}
+
+#information div a {
+    margin : 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    padding-top: 2%;
+    display: block;
+}
+
+/*LOGO FIN LOGO FIN LOGO FIN LOGO*/
+/*LOGO FIN LOGO FIN LOGO FIN LOGO*/
+
+#name_web_site {
+    text-align: center;
+    padding-bottom: 1%;
+    background-color: rgb(175, 88, 88);
+    color: white;
+}
+
+#name_web_site img {
+    width: 3%;
+}
+
+#name_web_site p {
+    vertical-align: middle;
+}
+
+/* Bouton retour haut de page*/
+
+#fleche {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    padding-bottom: 0%;
+    background-color: rgba(128, 128, 128, 0.699);
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+}
+
+#fleche:hover {
+    background-color: grey;
 }
