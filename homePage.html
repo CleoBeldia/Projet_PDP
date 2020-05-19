@@ -4,8 +4,8 @@
         <meta charset="utf-8"/>
         <meta name="Keywords" content="beetle" /> 
         <meta name="author" content="beetle" />
-        <script src="js/landmarksPage.js"></script>
-        <link rel="stylesheet" href="css/landmarksPage.css">
+        <script src="js/homePage.js"></script>
+        <link rel="stylesheet" href="css/homePage.css">
         <title>The beetles</title>
     </head>
 
@@ -16,154 +16,54 @@
                 <p id = 'titre'>THE BEETLES</p>
                 <p id = 'phraseTitre' >Phrase Phrase Phrase Phrase Phrase Phrase</p>
             </div> 
-        </div>
 
-        <div id='menu'>
-            <ul>
-                <li id='statistic'><a href="statisticPage.html">Statistiques</a>
-                </li>
-                <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a>
-                </li>
-                <li id='home'><a href='homePage.html'>Home</a>
-                </li>
-            </ul> 
-        </div>
-        
-        <div id = 'bodyPage'>
-            <div id='menuD'>
-                <p id ='labelb' class='input_it'><label id='labelT1' for='inputTps'>Tps file (predicted landmarks)</label></p>
-                <p id='labelc' class='input_it' ><label id='labelT2' for='inputTps1'>Tps file (manual landmarks)</label></p>
-                <p id='labela' class='input_it' ><label for='inputImage' >Choose an image</label></p>                  
-
-
-                <input class ='choix' id='inputImage' type='file' multiple='true' accept='.JPG' onchange='loadFile(event)'>
-                <input class ='choix' id='inputTps' type='file' accept = '.TPS' onclick="color('labelb')">
-                <input class ='choix' id='inputTps1' type='file' accept = '.TPS' onclick="color('labelc')" >
-                <p><img id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
-                 
-                <input id='reset' type="button" value = "RESET" onclick="history.go(0)" />
-
+            <div id='menu'>
+                <ul>
+                    <li id='statistic'><a href="statisticPage.html">Statistiques</a></li>
+    
+                    <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a> </li>
+    
+                    <li id='home'><a href='homePage.html'>Home</a></li>
+                </ul> 
             </div>
 
+            <div id = 'bodyPage'>
+            </div>
 
-            <div id='application'>
-
-                <div id='frise'>
-                    <p id='do_tps'><span class='nb_steps'>STEP 1</span>  Upload the first TPS file</p>
-                    <p id='do_tps2'><span class='nb_steps'>STEP 2</span>    Upload the second Tps file</p>
-                    <p id='do_image'><span class='nb_steps'>STEP 3</span>    Upload the corresponding image and drop it</p>
-                    <p id='do_land'><span class='nb_steps'>STEP 4</span>    click on the buttons below to display the landmarks</p>
-                    <p id='do_coor'><span class='nb_steps'>STEP 5</span>    check the coordinates of landmarks below the image</p>
-                    <p id='do_reset'><span class='nb_steps'>STEP 6</span>  <span id='load_gras'>Load your image</span> and <span id='reset_gras'>reset</span> to use an other one</p>
+            <div id = 'information'>
+                <div id='qui'>
+                    <!--<img src='images/about.png'/>-->
+                    <h3>Who are we ?</h3>
+                    <p>Maram al Hassan</p>
+                    <p>Cleo Berrehail</p>
+                    <p>Ayse Ergun</p>
+                    <p>Hanane Hassainia</p>
                 </div>
-
-                <div id='labelCheckBox'>
-
-                    <input class='inputCheckBox' type="checkbox" id="buttonDraw" onclick="appel()">
-                    <input class='inputCheckBox' type="checkbox" id="buttonDraw1" onclick="appel()">
-                    <input class='inputCheckBox' type="checkbox" id="dis" onclick="appel()">
-
-                    <label for='buttonDraw' id='check1' class='checklabel'>Manual</label>
-                    <label for='buttonDraw1' id='check2' class='checklabel'>Predicted</label>
-                    <label for='dis' id='check3' class='checklabel'>Distance</label>
+    
+                <div id='contact'>
+                    <!--<img src='images/mail.png'/>-->
+                    <h3>Contact</h3>
+                    <a class='infoMail' href="mailto:maram.al-hassan@u-bordeaux.fr">maram.al-hassan@u-bordeaux.fr</a><br>
+                    <a class='infoMail' href="mailto:cleo.berrehail@u-bordeaux.fr">cleo.berrehail@u-bordeaux.fr</a><br>
+                    <a class='infoMail' href="mailto:aergun@u-bordeaux.fr">aergun@u-bordeaux.fr</a><br>
+                    <a class='infoMail' href="mailto:hanane.hassainia@u-bordeaux.fr">hanane.hassainia@u-bordeaux.fr</a><br>
                 </div>
-
-                <div id='total_white'>
-                    <div id='canvas_landmark'>
-                        <img id="dragdroplogo" src="images/dragdrop.png" alt="The Scream">
-                        <div>
-                            <p id='div'   ondrop="drop(event)" ondragover="allowDrop(event)" >
-                                <canvas id='canvas' width="384" height="384"></canvas>
-                            </p>
-                            
-                            <a id="download" download="myBeetle.jpeg" href="" onclick="download_beetle(this);">Download to jpeg image</a>    
-                        
-                        </div>
-                    </div>
-                    <div id='data'>
-                        <table id='values_table'>
-                                <tr id='column' >
-                                    <th class='column_border_none'>L</th>
-                                </tr>
-                                <tr>
-                                    <th class='row_none'>L</th>
-                                </tr>         
-                        </table>
-
-                        <table id='predicted_table'>
-                                <tr id='column'>
-                                    <th colspan="2">P</th>
-                                </tr>
-                                <tr>
-                                    <th>x</th>
-                                    <th>y</th>
-                                </tr>
-                        </table>
-
-                        <table id='manual_table'>
-                                <tr>
-                                    <th colspan="2" >M</th>
-                                </tr>
-                                <tr>
-                                    <th>x</th>
-                                    <th>y</th>
-                                </tr>
-                        </table>
-
-                        <table id='distance_table'>
-                                <tr >
-                                    <th class='column_border_none'>Distance</th>
-                                </tr>
-                                <tr>
-                                    <th class='row_none'>Distance</th>
-                                </tr>
-                                
-                        </table>
-                    
-                    </div>
+    
+                <div id='carte'>
+                    <!--<img src='images/local.png'/>-->
+                    <h3>Find Us</h3>
+                    <p>University of Bordeaux</p>
+                    <p>351 cours de la Libération</p>
+                    <p>CS 10004</p>
+                    <p>33 405 Talence CEDEX</p>
                 </div>
 
             </div>
-
-        </div>
-        
-        <div id = 'information'>
-            <div id='qui'>
-                <!--<img src='images/about.png'/>-->
-                <h3>Who are we ?</h3>
-                <p>Maram al Hassan</p>
-                <p>Cleo Berrehail</p>
-                <p>Ayse Ergun</p>
-                <p>Hanane Hassainia</p>
+    
+            <div id='name_web_site'>
+                <img src='images/beetleLogo.png'/>
+                <p>&copyThe beetles</p>
             </div>
-
-            <div id='contact'>
-                <!--<img src='images/mail.png'/>-->
-                <h3>Contact</h3>
-                <a class='infoMail' href="mailto:maram.al-hassan@u-bordeaux.fr">maram.al-hassan@u-bordeaux.fr</a><br>
-                <a class='infoMail' href="mailto:cleo.berrehail@u-bordeaux.fr">cleo.berrehail@u-bordeaux.fr</a><br>
-                <a class='infoMail' href="mailto:aergun@u-bordeaux.fr">aergun@u-bordeaux.fr</a><br>
-                <a class='infoMail' href="mailto:hanane.hassainia@u-bordeaux.fr">hanane.hassainia@u-bordeaux.fr</a><br>
-            </div>
-
-            <div id='carte'>
-                <!--<img src='images/local.png'/>-->
-                <h3>Find Us</h3>
-                <p>University of Bordeaux</p>
-                <p>351 cours de la Libération</p>
-                <p>CS 10004</p>
-                <p>33 405 Talence CEDEX</p>
-
-      
-            </div>
-
-        </div>
-
-        <div id='name_web_site'>
-            <img src='images/beetleLogo.png'/>
-            <p>&copyThe beetles</p>
-        </div>
-
-        <a id='fleche' href="#">&#8963;</a>
+    
     </body>
 </html>
