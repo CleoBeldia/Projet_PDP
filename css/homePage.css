@@ -48,8 +48,6 @@ body {
 #menu {
     width: 100%;
     background-color: rgb(95, 95, 95);
-    position: sticky;
-    top: 0;
 }
 
 #menu > ul {
@@ -78,7 +76,7 @@ body {
 }
 
 #menu > ul > li > a {
-    padding: 15px 30px;
+    padding: 20px 30px;
     color: #FFF;
 }
 
@@ -127,66 +125,75 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY */
 /* BODY BODY BODY BODY BODY BODY BODY */
 
-/* DESINGN INFORMATION DIV */
-
-#information {
-    background-color:rgb(175, 88, 88);
-    display: flex;
+h2 {
+    color: brown;
 }
 
-#information div {
-    padding :3%;
-    text-align: center;
-    color: white;
-    min-width: 200px;
-}
-
-#qui {
-    flex: auto;
-}
-
-#contact{
-    flex :auto;
-}
-
-#carte {
-    flex: auto;
+h3 {
+    color: brown;
 }
 
 
-#information  h3 {
-    border-bottom: rgb(255, 159, 159) 1px solid;
-    padding-bottom: 4%;
-    color: rgb(255, 159, 159);
 
+.info {
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    margin: 15% 10%;
+    margin-left: 2%;
+    margin-top: 5%;
+    text-align: justify;
+    font-family: serif;   
+    color: black; 
+    line-height: 30px;
 
 }
 
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    margin-top: 12.4%;
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #f1f0ec; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
 
-#information div p {
-    padding-top: 3%;
-    padding-bottom: 4.4%;
-}
 
-#information div a {
-    margin : 0;
-    padding: 0;
-    color: white;
+.sidenav a {
+    padding: 6px 8px 6px 16px;
     text-decoration: none;
-    padding-top: 2%;
+    font-size: 125%;
+    color: teal;
     display: block;
-}
-#name_web_site {
-    text-align: center;
-    background-color: rgb(175, 88, 88);
-    color: white;
-    padding-bottom: 1%;
-}
+  }
 
-#name_web_site img {
-    width: 3%;
-}
+  .sidenav a:hover {
+    color:brown;
+  }
 
-#name_web_site p {
-    vertical-align: middle;
-}
+
+  #resources{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: teal;
+    display: block;
+  }
+
+  .anatomy {
+      width: 400px;
+      height: 400px;
+      margin-left: 250px;
+  }
+
+
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
