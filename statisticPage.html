@@ -18,32 +18,78 @@
                 <p id = 'titre'>THE BEETLES</p>
                 <p id = 'phraseTitre' >Phrase Phrase Phrase Phrase Phrase Phrase</p>
             </div> 
+        </div>
 
-            <div id='menu'>
-                <ul>
-                    <li id='statistic'><a href="statisticPage.html">Statistiques</a>
-                    </li>
-                    <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a>
-                    </li>
-                    <li id='home'><a href='homePage.html'>Home</a>
-                    </li>
-                </ul> 
+        <div id='menu'>
+            <ul>
+                <li id='statistic'><a href="statisticPage.html">Statistiques</a>
+                </li>
+                <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a>
+                </li>
+                <li id='home'><a href='homePage.html'>Home</a>
+                </li>
+            </ul> 
+        </div>
+        
+        <div id='car'>  
+             <div id="input_stat">
+                <input  id='fileUpload'     class='stat_input' type='file'     accept = '.csv' />
+                <input  id='goButton'       class='stat_input' type="button"   value = "Go" onclick='Process()' />
+                <input  id= 'meanButton'    class='stat_input' type="button"   value = "Mean Graph" onclick='MeanGraph()' />
+
+                <label for='fileUpload' id='label_upload'     class='label_input'>Upload Csv File</label>
+                <label for='goButton'   id='label_go'          class='label_input'>Go</label>
+
             </div>
-            <div id="input">
-                <input id='fileUpload' type='file' accept = '.csv' >
-                <input type="button" value = "Go" onclick='Process()' />
-                <input type="button" value = "Mean Graph" onclick='MeanGraph()' />
-                <input type="button" value = "Reset" onclick="history.go(0)" />
 
+                
+            <div id="caroussel"> 
+                <button id="before" onclick="changeIndex('previous')"> &#10094; </button>
+                <button id="next" onclick="changeIndex('after')"> &#10095; </button>                 
+                <div id="caroussel1">
+                    <canvas id='canvas_presentation' width="600" height="400"></canvas>  
+                </div>
             </div>
-  
-<h3> Due to the handling of large files it will take some time to load the graphs,<br>
-        please be patient ! </h3>
-
-         <div class="container" id='container'>
+                
         </div>  
+        
+        <div id = 'information'>
+            <div id='qui'>
+                <!--<img src='images/about.png'/>-->
+                <h3>Who are we ?</h3>
+                <p>Maram al Hassan</p>
+                <p>Cleo Berrehail</p>
+                <p>Ayse Ergun</p>
+                <p>Hanane Hassainia</p>
+            </div>
+
+            <div id='contact'>
+                <!--<img src='images/mail.png'/>-->
+                <h3>Contact</h3>
+                <a class='infoMail' href="mailto:maram.al-hassan@u-bordeaux.fr">maram.al-hassan@u-bordeaux.fr</a><br>
+                <a class='infoMail' href="mailto:cleo.berrehail@u-bordeaux.fr">cleo.berrehail@u-bordeaux.fr</a><br>
+                <a class='infoMail' href="mailto:aergun@u-bordeaux.fr">aergun@u-bordeaux.fr</a><br>
+                <a class='infoMail' href="mailto:hanane.hassainia@u-bordeaux.fr">hanane.hassainia@u-bordeaux.fr</a><br>
+            </div>
+
+            <div id='carte'>
+                <!--<img src='images/local.png'/>-->
+                <h3>Find Us</h3>
+                <p>University of Bordeaux</p>
+                <p>351 cours de la Libération</p>
+                <p>CS 10004</p>
+                <p>33 405 Talence CEDEX</p>
+
       
-   
-       
+            </div>
+
+        </div>
+
+        <div id='name_web_site'>
+            <img src='images/beetleLogo.png'/>
+            <p>&copyThe beetles</p>
+        </div>
+
+
     </body>
 </html>
