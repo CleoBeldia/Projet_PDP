@@ -48,6 +48,8 @@ body {
 #menu {
     width: 100%;
     background-color: rgb(95, 95, 95);
+    position: sticky;
+    top: 0;
 }
 
 #menu > ul {
@@ -76,7 +78,7 @@ body {
 }
 
 #menu > ul > li > a {
-    padding: 20px 30px;
+    padding: 15px 30px;
     color: #FFF;
 }
 
@@ -124,3 +126,67 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY */
 /* BODY BODY BODY BODY BODY BODY BODY */
 /* BODY BODY BODY BODY BODY BODY BODY */
+
+/* DESINGN INFORMATION DIV */
+
+#information {
+    background-color:rgb(175, 88, 88);
+    display: flex;
+}
+
+#information div {
+    padding :3%;
+    text-align: center;
+    color: white;
+    min-width: 200px;
+}
+
+#qui {
+    flex: auto;
+}
+
+#contact{
+    flex :auto;
+}
+
+#carte {
+    flex: auto;
+}
+
+
+#information  h3 {
+    border-bottom: rgb(255, 159, 159) 1px solid;
+    padding-bottom: 4%;
+    color: rgb(255, 159, 159);
+
+
+}
+
+
+#information div p {
+    padding-top: 3%;
+    padding-bottom: 4.4%;
+}
+
+#information div a {
+    margin : 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    padding-top: 2%;
+    display: block;
+}
+#name_web_site {
+    text-align: center;
+    background-color: rgb(175, 88, 88);
+    color: white;
+    padding-bottom: 1%;
+}
+
+#name_web_site img {
+    width: 3%;
+}
+
+#name_web_site p {
+    vertical-align: middle;
+}
