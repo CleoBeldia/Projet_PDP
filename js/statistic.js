@@ -147,7 +147,7 @@ function Process() {
         renderChart(LM4, L, 'L4');
         Lmean.push(m4);
         LM.push(4);
-    }if (LM15.length!=0){    
+    }if (LM5.length!=0){    
         renderChart(LM5, L, 'L5');
         Lmean.push(m5);
         LM.push(5);
