@@ -229,7 +229,7 @@ function renderChart(data, labels, name) {
             datasets: [{
                 label: name, //name of the Graph
                 data: data,//y
-                background-color: 'rgba(0, 128, 128, 0.116)',
+                backgroundColor: 'rgba(0, 128, 128, 0.116)',
                 borderColor: "rgb(0, 128, 128)",
             }]
         },
