@@ -231,6 +231,7 @@ function renderChart(data, labels, name) {
                 data: data,//y
                 backgroundColor: 'rgba(0, 128, 128, 0.116)',
                 borderColor: "rgb(0, 128, 128)",
+                borderWidth : 1,
                 pointBackgroundColor : 'rgb(175, 88, 88)',
                 pointBorderColor : 'rgb(175, 88, 88)',
                 pointRadius : 2,
