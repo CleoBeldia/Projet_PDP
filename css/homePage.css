@@ -126,12 +126,31 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY */
 
 h2 {
-    color: brown;
+    color:whitesmoke;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: rgb(196, 89, 89);
+    border-style: solid;
+    border-radius: 20px;
+    border: 3px solid teal;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: xx-large;
+    text-align: center;
 }
 
 h3 {
-    color: brown;
-}
+    color:whitesmoke;
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgb(196, 89, 89);
+    border-style: solid;
+    border-radius: 20px;
+    border: 2px solid teal;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: large;
+    text-align: center;}
 
 
 
@@ -151,15 +170,15 @@ h3 {
 
 /* The sidebar menu */
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
+    height: 100%; 
     margin-top: 12.4%;
-    width: 25%; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    width: 25%; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
     right: 0;
-    background-color: #f1f0ec; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #f1f0ec; 
+    overflow-x: hidden; /
     padding-top: 20px;
   }
 
@@ -174,6 +193,9 @@ h3 {
 
   .sidenav a:hover {
     color:brown;
+    background-color: #FFF;
+    padding-top: 3%;
+    padding-right: 3%;
   }
 
 
@@ -190,11 +212,37 @@ h3 {
       height: 400px;
       margin-left: 250px;
   }
+ 
+  p {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: medium;
+      font-weight: 550;
 
+  }
+ 
+  #list {
+      color: rgb(138, 61, 77);
+      font-style: italic;
+      font-weight: bold;
+      font-size: medium;
 
+  }
+  #steps {
+      margin-left: 300px;
+      width: 150px;
+      height: 150px;
+  }
+
+  #csv {
+      margin-left: 250px;
+      width: 350px;
+      height: 300px;
+  }
 
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+
 
