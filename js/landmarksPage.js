@@ -88,12 +88,6 @@ window.onload = function loadTPS() {
                 c = c + 1; 
             }
 
-            /*if (c == 2){
-                distance(x, x1, y, y1);
-                creerTab2(x,y,'predict_values','predict_x','predict_y','predicted_table');
-                creerTab2(x1,y1,'manual_values','manual_x','manual_y','manual_table');
-                creerTab2(x1,y1,'distance_value','distance','distance','distance_table');
-            }*/
             if (c == 2){
                 distance(x, x1, y, y1);
                 console.log('table créer ok');
@@ -114,43 +108,6 @@ window.onload = function loadTPS() {
 
 }
 
-/*function creerTab2(x,y,tr1,tr2,tr3,type){
-    let table = document.getElementById(type);
-    let tr1_ = document.getElementById(tr1);
-    let tr2_ = document.getElementById(tr2);
-    let tr3_ = document.getElementById(tr3);
-
-    let taille_tab;
-
-    if(x.length > y.length){
-        taille_tab = x.length;
-    }
-    else{
-        taille_tab = y.length;
-    }
-
-    for (let i=0; i < taille_tab ; i++){
-        let td_tab1 = document.createElement('td');
-        let td_tab2 = document.createElement('td');
-        let td_tab3 = document.createElement('td');
-
-        tr1_.appendChild(td_tab1);
-        tr2_.appendChild(td_tab2);
-        td_tab1.innerHTML = i+1;
-
-        if (tr1 == 'distance_value'){
-            td_tab2.innerHTML = dist[i];
-        }
-
-        else {
-            tr3_.appendChild(td_tab3);
-            td_tab2.innerHTML = x[i];
-            td_tab3.innerHTML = y[i];
-        }
-    }
-    table.style.display = 'none';
-}
-*/
 function creerTab2(x,y,type){
     let taille_tab = 0;
     if (x.length >= y.length){
