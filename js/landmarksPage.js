@@ -1,3 +1,4 @@
+// variables
 let x = [];
 let y = [];
 let x1 = [];
@@ -5,18 +6,15 @@ let y1 = [];
 let dist = [];
 let sizepoint = 3.5;
 let c;
+let c_drop = 0;
+let frise =  document.getElementsByClassName('protocole');
 
-//compteur qui s'implémente de 1 lorsqu'une nouvelle valeur est ajoutée au tableau, ils sont utilise afin que les tableaux ne soit crée qu'une seul fois
-let c_create_tab_v = 0;
-let c_create_tab_p = 0;
-let c_create_tab_m = 0;
-let c_create_tab_d = 0;
+
 //image
 let loadFile = function (event) {
     let image = document.getElementById('uploadImage');
     image.src = URL.createObjectURL(event.target.files[0]);
 };
-
 
 
 function listpoint(third, x, y) {
@@ -28,8 +26,6 @@ function listpoint(third, x, y) {
         }
     }
 }
-
-
 
 window.onload = function loadTPS() {
     textcanvas();
@@ -49,24 +45,33 @@ window.onload = function loadTPS() {
             let second = first.toString().split('\n');
             let third = second.toString().split(',');
             listpoint(third, x, y);
-            console.log("x = ",x);
             if (x.length!=0){
                 c = c + 1; 
             }
             if (c == 2){
-                console.log("x superieur égal à 2 donc creation");
                 distance(x, x1, y, y1);
-                if (c_create_tab_v == 0 && c_create_tab_p == 0 && c_create_tab_m == 0 && c_create_tab_d == 0){
-                    creerTab2(x,y,'values_table');
-                    creerTab2(x,y,'predicted_table');
-                    creerTab2(x1,y1,'manual_table');
-                    creerTab2(x1,y1,'distance_table');
+                creerTab2(x,y,'values_table');
+                creerTab2(x,y,'predicted_table');
+                creerTab2(x1,y1,'manual_table');
+                creerTab2(x1,y1,'distance_table');
+                for (let i = 0; i<frise.length; i++){
+                    frise[i].style.display = 'none';
                 }
+                if (c_drop >= 1){
+                    document.getElementById('do_land').style.display = 'inline-block';
+                }
+                else {
+                    document.getElementById('do_image').style.display = 'inline-block';
+                }
+            }
+            else if (c==1){
+                for (let i = 0; i<frise.length; i++){
+                    frise[i].style.display = 'none';
+                }
+                document.getElementById('do_tps2').style.display = 'inline-block';
             }
         };
         fr.readAsText(file);
-        document.getElementById('do_tps').style.display = 'none';
-        document.getElementById('do_tps2').style.display = 'inline-block';
     }
 
     let g = document.getElementById('inputTps1');
@@ -87,22 +92,31 @@ window.onload = function loadTPS() {
             if (x1.length!=0){
                 c = c + 1; 
             }
-
             if (c == 2){
                 distance(x, x1, y, y1);
-                console.log('table créer ok');
-                if (c_create_tab_v == 0 && c_create_tab_p == 0 && c_create_tab_m == 0 && c_create_tab_d == 0){
-                    creerTab2(x,y,'values_table');
-                    creerTab2(x,y,'predicted_table');
-                    creerTab2(x1,y1,'manual_table');
-                    creerTab2(x1,y1,'distance_table');
+                creerTab2(x,y,'values_table');
+                creerTab2(x,y,'predicted_table');
+                creerTab2(x1,y1,'manual_table');
+                creerTab2(x1,y1,'distance_table');
+                for (let i = 0; i<frise.length; i++){
+                    frise[i].style.display = 'none';
                 }
+                if (c_drop >= 1){
+                    document.getElementById('do_land').style.display = 'inline-block';
+                }
+                else {
+                    document.getElementById('do_image').style.display = 'inline-block';
+                }
+            }
+            else if (c==1){
+                for (let i = 0; i<frise.length; i++){
+                    frise[i].style.display = 'none';
+                }
+                document.getElementById('do_tps2').style.display = 'inline-block';
             }
         };
         gr.readAsText(file2);
-
-        document.getElementById('do_tps2').style.display = 'none';
-        document.getElementById('do_image').style.display = 'inline-block';    
+ 
 
     }
 
@@ -125,23 +139,15 @@ function creerTab2(x,y,type){
 
             if (type =='values_table'){
                 td_tab1.innerHTML = i+1;
-                c_create_tab_v+=1;
             } 
             else if (type == 'distance_table'){
                 td_tab1.innerHTML = dist[i];
-                c_create_tab_d+=1;
             }
             else {
                 let td_tab2 = document.createElement('td');
                 tr_tab.appendChild(td_tab2);
                 td_tab1.innerHTML = x[i];
                 td_tab2.innerHTML = y[i];
-                if(type =='predicted_table'){
-                    c_create_tab_p+= 1;
-                }
-                else{
-                    c_create_tab_m+= 1;
-                }
             }
         }
 }
@@ -150,7 +156,7 @@ function creerTab2(x,y,type){
 function afficherTab (type){
     let table = document.getElementById(type);
     table.style.display = 'initial';
-}k
+}
 
 
 
@@ -162,8 +168,9 @@ function clearTab(type){
 
 
 function appel(){
-    document.getElementById('do_land').style.display = 'none';
-    document.getElementById('do_coor').style.display = 'inline-block';
+    for (let i = 0; i<frise.length; i++){
+        frise[i].style.display = 'none';
+    }
 
     let p_check = document.getElementById('buttonDraw1');
     let m_check = document.getElementById('buttonDraw');
@@ -172,86 +179,93 @@ function appel(){
     let p = p_check.checked;
     let m = m_check.checked;
     let d = d_check.checked;
-    clearpoint();
 
-    setTimeout(function () {
-        if (p == true && m == false && d == false){
-            draw(x, y, sizepoint, 'red');
-            afficherTab('values_table');
-            afficherTab('predicted_table'); 
-            clearTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of the predicted landmarks below the image ';
 
-        }
+    if (c_drop >= 1 && c >= 2){
+        document.getElementById('do_coor').style.display = 'inline-block';
+        clearpoint();
+        setTimeout(function () {
+            if (p == true && m == false && d == false ){
+                draw(x, y, sizepoint, 'red');
+                afficherTab('values_table');
+                afficherTab('predicted_table'); 
+                clearTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of the predicted landmarks below the image ';
+            }
+    
+            else if (p == false && m == true && d == false){
+                draw(x1, y1, sizepoint, 'yellow');
+                afficherTab('values_table');
+                clearTab('predicted_table'); 
+                afficherTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of the manual landmarks below the image ';
+            }
+    
+            else if (p == true && m == false && d == true){
+                draw(x, y, sizepoint, 'red');
+                afficherTab('values_table');
+                afficherTab('predicted_table'); 
+                clearTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of the predicted landmarks below the image ';
+            }
+    
+            else if (p == true && m == true && d == false){
+                draw(x, y, sizepoint, 'red');
+                draw(x1, y1, sizepoint, 'yellow');
+                afficherTab('values_table');
+                afficherTab('predicted_table'); 
+                afficherTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of all the landmarks below the image';
+            }
+    
+            else if (p == false && m == true && d == true){
+                draw(x1, y1, sizepoint, 'yellow');
+                afficherTab('values_table');
+                clearTab('predicted_table'); 
+                afficherTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of the manual landmarks below the image ';
+            }
+    
+            else if (p == true && m == true && d == true){
+                draw(x, y, sizepoint, 'red');
+                draw(x1, y1, sizepoint, 'yellow');
+                distance(x, x1, y, y1);
+                afficherTab('values_table');
+                afficherTab('predicted_table'); 
+                afficherTab('manual_table');
+                afficherTab('distance_table');
+                document.getElementById('do_coor').innerHTML = 'You can check the coordinates of all the landmarks and the distances below the image ';
+            }
+    
+            else {
+                clearpoint();
+                clearTab('values_table');
+                clearTab('predicted_table');
+                clearTab('manual_table');
+                clearTab('distance_table');
+                document.getElementById('do_coor').style.display = 'none';
+                document.getElementById('do_land').style.display = 'inline-block';
+            }
+        },5);
+    }
+    
+    else if (c <= 1){
+        document.getElementById('do_war_tps').style.display = 'inline-block';
 
-        else if (p == false && m == true && d == false){
-            draw(x1, y1, sizepoint, 'yellow');
-            afficherTab('values_table');
-            clearTab('predicted_table'); 
-            afficherTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of the manual landmarks below the image ';
+    }
 
-        }
-
-        else if (p == true && m == false && d == true){
-            draw(x, y, sizepoint, 'red');
-            afficherTab('values_table');
-            afficherTab('predicted_table'); 
-            clearTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of the predicted landmarks below the image ';
-        }
-
-        else if (p == true && m == true && d == false){
-            draw(x, y, sizepoint, 'red');
-            draw(x1, y1, sizepoint, 'yellow');
-            afficherTab('values_table');
-            afficherTab('predicted_table'); 
-            afficherTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of all the landmarks below the image';
-
-        }
-
-        else if (p == false && m == true && d == true){
-            draw(x1, y1, sizepoint, 'yellow');
-            afficherTab('values_table');
-            clearTab('predicted_table'); 
-            afficherTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of the manual landmarks below the image ';
-
-        }
-
-        else if (p == true && m == true && d == true){
-            draw(x, y, sizepoint, 'red');
-            draw(x1, y1, sizepoint, 'yellow');
-            distance(x, x1, y, y1);
-            afficherTab('values_table');
-            afficherTab('predicted_table'); 
-            afficherTab('manual_table');
-            afficherTab('distance_table');
-            document.getElementById('do_coor').innerHTML = 'You can know check the coordinates of all the landmarks and the distances below the image ';
-        }
-
-        else {
-            clearpoint();
-            clearTab('values_table');
-            clearTab('predicted_table');
-            clearTab('manual_table');
-            clearTab('distance_table');
-            document.getElementById('do_coor').style.display = 'none';
-            document.getElementById('do_land').style.display = 'inline-block';
-        }
-    },5);
+    else if (c_drop < 1){
+     document.getElementById('do_war_image').style.display = 'inline-block';
+    }
+  
 }
 
-
-
-
-
+//Fonction qui dessine des point de couleurs 'color' et de taille 'size' sur l'image en fonction de coordonnées
 function draw(x, y, size, color) {
     let ctx = document.getElementById('canvas').getContext('2d');
     for (let i = 0; i <= x.length; i++) {
@@ -265,12 +279,13 @@ function draw(x, y, size, color) {
 
 
 
+// Fonction qui permet l'écriture le calcul des distances entre les coordonnées des points prédit (x et y)
+// et ceux des points manuels (x1 et y1) puis son écriture sur l'image
 function distance(x, x1, y, y1) {
     let ctx = document.getElementById('canvas').getContext('2d');
     let dis = document.getElementById("Distance");
     let d_check = document.getElementById('dis');
 
-    
     for (let i = 0; i < x.length; i++) {
         let moyx = ((x[i] + x1[i]) / 2);
         let moyy = 185 - ((y[i] + y1[i]) / 2);
@@ -287,9 +302,7 @@ function distance(x, x1, y, y1) {
 }
 
 
-
-
-
+//Fonction qui permet de remplacer l'ancienne image par une la même sans landmarks ou distances
 function clearpoint() {
     let ctx = document.getElementById('canvas').getContext('2d');
     let image = new Image();
@@ -300,17 +313,21 @@ function clearpoint() {
     }
 }
 
+
+//Fonction relative au 'drag and drop' de l'image 
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     let ctx = document.getElementById('canvas').getContext('2d');
     let image = new Image();
@@ -320,21 +337,33 @@ function drop(ev) {
         ctx.drawImage(image, 0, 0, 384, 384);
     }
 
-    document.getElementById('do_image').style.display = 'none';
-    document.getElementById('do_land').style.display = 'inline-block';
+    if (c >= 2){
+        let frise =  document.getElementsByClassName('protocole');
+        for (let i = 0; i<frise.length; i++){
+            frise[i].style.display = 'none';
+        }
+        document.getElementById('do_land').style.display = 'inline-block';
+    }
+    else if (c < 2){
+        let frise =  document.getElementsByClassName('protocole');
+        for (let i = 0; i<frise.length; i++){
+            frise[i].style.display = 'none';
+        }
+        document.getElementById('do_war_tps').style.display = 'inline-block';
+    }
+  
+
+    c_drop+= 1;
     }
 
 
-
-
 download_beetle = function (image) {
-    var enregister = canvas.toDataURL("image/jpeg");
+    let enregister = canvas.toDataURL("image/jpeg");
     image.href = enregister;
 };
 
 
 //CHANGEMENT COULEUR 
-
 function color(label) {
     document.getElementById(label).style.backgroundColor = "white";
     document.getElementById(label).style.color = "teal";
@@ -342,28 +371,26 @@ function color(label) {
 };
 
 
-
-
 //ECRITURE CANVAS DEBUT
 function  textcanvas(){
-    var canvas = document.getElementById('canvas');
-    var canvasContext = canvas.getContext('2d');
+    let canvas = document.getElementById('canvas');
+    let canvasContext = canvas.getContext('2d');
     let img  = new Image(); 
     img.src = 'images/dragdrop.png';
     canvasContext.drawImage(img, 384/2-50, 50);
-    var fontSize = 20;
+    let fontSize = 20;
 
     canvasContext.font = fontSize + "px Arial";
     canvasContext.fillStyle = "rgb(51,51,51)";
     canvasContext.textAlign = "center";
 
-    var string = "DRAG AND DROP YOUR IMAGE \n HERE";
-    var array = string.split('\n');
+    let string = "DRAG AND DROP YOUR IMAGE \n HERE";
+    let array = string.split('\n');
 
-    var x = 384/2;
-    var y = 384/2;
+    let x = 384/2;
+    let y = 384/2;
 
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         canvasContext.fillText(array[i], x, y);
          y += fontSize;
     }
