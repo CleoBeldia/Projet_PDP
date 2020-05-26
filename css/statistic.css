@@ -212,7 +212,23 @@ body {
 .stat_input {
     display: none;
 }
+/* design download button*/
+#telecharger_graph {
+    border: teal solid 1px;
+    background-color: teal;
+    color: white;
+    padding: 1%;
+    box-shadow: 3px 3px 10px grey;
+    margin-bottom: 2%;
+    font-size: 1em;
+}
 
+#telecharger_graph:hover {
+    border-color: rgb(158, 25, 25);
+    background-color: rgb(158, 25, 25);
+    color: white;
+    font-weight: bold;
+}
 /* DESINGN INFORMATION DIV */
 
 #information {
@@ -276,5 +292,3 @@ body {
 #name_web_site p {
     vertical-align: middle;
 }
-
-
