@@ -1,5 +1,6 @@
- 
+
 let open = function(){
+    console.log('okokok');
     document.getElementById('old_side').style.display = 'none';
     document.getElementById('new_side').style.display = 'block';
 }
@@ -17,3 +18,4 @@ let prevent = function(){
 }
 
 window.onload = prevent;
+
