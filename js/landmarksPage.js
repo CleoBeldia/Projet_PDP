@@ -116,10 +116,7 @@ window.onload = function loadTPS() {
             }
         };
         gr.readAsText(file2);
- 
-
     }
-
 }
 
 function creerTab2(x,y,type){
@@ -251,7 +248,7 @@ function appel(){
                 document.getElementById('do_coor').style.display = 'none';
                 document.getElementById('do_land').style.display = 'inline-block';
             }
-        },5);
+        },200);
     }
     
     else if (c <= 1){
