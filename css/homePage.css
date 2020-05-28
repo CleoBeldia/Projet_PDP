@@ -9,6 +9,7 @@ body {
     padding: 0;
 }
 
+
 /* HEAD HEAD HEAD HEAD HEAD HEAD HEAD */
 /* HEAD HEAD HEAD HEAD HEAD HEAD HEAD */
 /* HEAD HEAD HEAD HEAD HEAD HEAD HEAD */
@@ -17,37 +18,42 @@ body {
 /* TITLE TITLE TITLE */
 /* TITLE TITLE TITLE */
 
-#head {
+#title {
     background-color: rgb(95, 95, 95);
     color: white;
+    margin: 0;
 }
 
-
 #logo {
-    width: 7%;
+    z-index: 0;
+    width: 110px;
     float: left;
 }
 
+#logo {
+    max-width: 100%;
+}
 #titre {
     padding-top: 2%;
     font-size: 190%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #phraseTitre {
     padding-bottom: 2%;
     font-size: 80%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
 
 /* MENU MENU MENU */
 /* MENU MENU MENU */
 
-
 #menu {
     width: 100%;
     background-color: rgb(95, 95, 95);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: 0;
 }
 
 #menu > ul {
@@ -68,46 +74,23 @@ body {
     margin-right: 2%;
     background-color: teal;
     color: white;
+    box-shadow: 2px 2px 10px red(5, 94, 105);
 }
 
 #menu li {
     list-style-type: none;
-
 }
 
 #menu > ul > li > a {
-    padding: 20px 30px;
-    color: #FFF;
+    padding: 15px 30px;
+    color:white;
 }
-
 
 #menu a {
     display: inline-block;
     text-decoration: none;
 }
 
-/*#menu li:hover .submenu{
-    display: inline-block;
-    position: absolute;
-    top: 100%;
-    left:0px;
-    padding: 0px;
-    z-index: 500;
-}
-
-
-.submenu li{
-    border-bottom: 1px solid #CCC;
-}
-
-.submenu li a{
-    padding : 15px 30px; 
-    font-size : 13px; 
-    color: #222538;
-    text-align: center;
-
-}
-*/
 
 #menu li a:hover{
     background-color: white;
@@ -120,129 +103,356 @@ body {
     color: teal;
 }
 
-/* BODY BODY BODY BODY BODY BODY BODY */
-/* BODY BODY BODY BODY BODY BODY BODY */
-/* BODY BODY BODY BODY BODY BODY BODY */
-/* BODY BODY BODY BODY BODY BODY BODY */
 
-h2 {
-    color:whitesmoke;
-    font-weight: bolder;
-    font-style: italic;
-    background-color: rgb(196, 89, 89);
-    border-style: solid;
-    border-radius: 20px;
-    border: 3px solid teal;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    font-size: xx-large;
+/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
+/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
+/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
+/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
+/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
+
+#bodyPage {
+    margin-bottom: 1%;
+    width: auto;
+}
+/* WELCOME DIV */
+#welcome_div{
+    background-color: teal;
+    text-align: center;
+    padding: 5%;
+}
+
+#border_title{
+    border-bottom: solid white 2px;
+    border-top: solid white 2px;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#welcome_sentance{
+    font-size: 8vw;
+    color: white;
+
+}
+#welcome_div #image1 {
+    width: 23%;
+}
+#welcome_div #image2 {
+    width: 12%;
+}
+#welcome_div #image3 {
+    width: 8%;
+}
+
+#welcome_div #image4 {
+    width: 6%;
+}
+
+#welcome_image {
+    text-align: center;
+    margin: 0;
+}
+
+#welcome_image img {
+    margin-right: 1%;
+}
+
+/*presentation div*/
+.title_about{
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-bottom: 1%;
+    color:rgb(175, 88, 88) ;
+    border-bottom: 2px solid rgba(175, 88, 88, 0.719);
+}
+
+#pres_steps, #pres_machine, #pres_beetles {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#pres_steps {
+    display: flex;
+}
+
+#pres1 {
+    flex: 50%;
+    margin-right: 3%;
+    color:rgb(90, 90, 90) ;
+    margin: auto;
+    width: 100%;
+    border: 1px dashed teal;
+    text-align: justify;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 3vh;
+    height: auto;
+}
+
+#pres2 {
+    flex: 50%;
+}
+
+#pres1 #dear {
+    color:teal ;
     text-align: center;
 }
 
-h3 {
-    color:whitesmoke;
+
+    /*table*/
+th p {
+    padding: 3vh;
+    color: teal;
     font-weight: bold;
-    font-style: italic;
-    background-color: rgb(196, 89, 89);
-    border-style: solid;
-    border-radius: 20px;
-    border: 2px solid teal;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: large;
-    text-align: center;}
+    font-size: 3vh;
+}
 
-
-
-.info {
-    position: absolute;
-    width: 800px;
-    height: 300px;
-    margin: 15% 10%;
-    margin-left: 2%;
-    margin-top: 5%;
+.text_table {
+    color:rgb(90, 90, 90) ;
+    padding: 3%;
     text-align: justify;
-    font-family: serif;   
-    color: black; 
-    line-height: 30px;
+}
+
+/*div machine learning*/
+#pres_machine {
+    color:rgb(90, 90, 90) ;
+    text-align: justify;
+    line-height: 3vh;
+}
+
+/*div beetles*/
+#pres_beetles{
+    color:rgb(90, 90, 90) ;
+    text-align: justify;
+    line-height: 3vh;
+}
+
+#pres_beetles span{
+    color: teal;
+    font-weight: bold;
+}
+
+#part_beetles{
+    display: inline-flex;
+}
+
+#elytra, #pronotum, #mandibule, #head {
+    flex: auto;
+    margin-top: 3%;
+    background-color: rgba(231, 228, 228, 0.438);
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+#elytra, #pronotum, #mandibule {
+    margin-right: 1%;
+}
+#pres_beetles div {
+    text-align: justify;
+}
+
+#pres_beetles div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
 
 }
 
-/* The sidebar menu */
-.sidenav {
-    height: 100%; 
-    margin-top: 12.4%;
-    width: 25%; 
-    position: fixed; 
-    z-index: 1; 
-    top: 0;
-    right: 0;
-    background-color: #f1f0ec; 
-    overflow-x: hidden; /
-    padding-top: 20px;
-  }
-
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 125%;
-    color: teal;
+#anatomy {
+    width: 40vh;
     display: block;
-  }
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
 
-  .sidenav a:hover {
-    color:brown;
-    background-color: #FFF;
+#pres_beetles div p {
+    text-align: center;
+    color:rgb(175, 88, 88) ;
+    border-bottom: 1px solid rgb(175, 88, 88);
+    font-weight: bold;
+    margin-bottom: 3%;
+
+}
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+
+/* DESINGN INFORMATION DIV */
+
+#information {
+    background-color:rgb(175, 88, 88);
+    display: flex;
+}
+
+#information div {
+    padding :3%;
+    text-align: center;
+    color: white;
+}
+
+#qui {
+    flex: auto;
+}
+
+#contact{
+    flex :auto;
+}
+
+#carte {
+    flex: auto;
+}
+
+
+#information  h3 {
+    border-bottom: rgb(255, 159, 159) 1px solid;
+    padding-bottom: 4%;
+    color: rgb(255, 159, 159);
+
+
+}
+
+
+#information div p {
     padding-top: 3%;
-    padding-right: 3%;
-  }
+    padding-bottom: 4.4%;
+}
 
-
-  #resources{
-    padding: 6px 8px 6px 16px;
+#information div a {
+    margin : 0;
+    padding: 0;
+    color: white;
     text-decoration: none;
-    font-size: 20px;
-    color: teal;
+    padding-top: 2%;
     display: block;
-  }
+}
+#name_web_site {
+    text-align: center;
+    background-color: rgb(175, 88, 88);
+    color: white;
+    padding-bottom: 1%;
+}
 
-  .anatomy {
-      width: 400px;
-      height: 400px;
-      margin-left: 250px;
-  }
- 
-  p {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: medium;
-      font-weight: 550;
+#name_web_site img {
+    width: 3%;
+}
 
-  }
- 
-  #list {
-      color: rgb(138, 61, 77);
-      font-style: italic;
-      font-weight: bold;
-      font-size: medium;
+#name_web_site p {
+    vertical-align: middle;
+}
 
-  }
-  #steps {
-      margin-left: 300px;
-      width: 150px;
-      height: 150px;
-  }
+/* Bouton retour haut de page*/
 
-  #csv {
-      margin-left: 250px;
-      width: 350px;
-      height: 300px;
-  }
+#fleche {
+    color: white;
+    text-align: center;
+    font-size: 4vh;
+    padding: 10px;
+    padding-bottom: 0%;
+    background-color: rgba(128, 128, 128, 0.699);
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+}
 
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+#fleche:hover {
+    background-color: grey;
+}
+
+/*SIDE BAR*/
+/*old side bar*/
+#side_bar {
+display: none;
+}
+
+#label_bar:hover {
+    background-color: grey;
+}
+
+#label_bar{
+    color: white;
+    text-align: center;
+    font-size: 4vh;
+    padding: 10px;
+    padding-bottom: 0%;
+    background-color: rgba(128, 128, 128, 0.699);
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+}
+
+/*new side bar*/
+#new_side{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.699);
+    text-align: center;
+    font-size: 2vh;
+    text-decoration: none;
+    display: none;
+}
+
+#close {
+    display: none;
+}
+
+#label_close {
+    padding: 10%;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+#close:hover {
+    background-color: red;
+}
 
 
+#new_side p a {
+ text-decoration: none;
+ color: white;
+ display: block;
+ position: relative;
+ padding: 10%;
+}
 
+#new_side label {
+    text-decoration: none;
+    color: white;
+    display: block;
+    position: relative;
+    padding: 10%;
+    border-bottom: solid white 1px;
+   }
+
+#new_side label span {
+    font-size: 2.7vh;
+    padding-left: 1%;
+}
+#new_side p a:hover{
+    display: block;
+    background-color: rgb(175, 88, 88,0.699);
+}
+
+
+#new_side label:hover{
+    display: block;
+    background-color: rgb(175, 88, 88,0.699);
+}
