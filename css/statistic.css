@@ -1,6 +1,7 @@
 * {
     margin : 0; 
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,30 +19,25 @@ body {
 /* TITLE TITLE TITLE */
 /* TITLE TITLE TITLE */
 
-#head {
+#title {
     background-color: rgb(95, 95, 95);
     color: white;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 #logo {
-    width: 7%;
+    z-index: 0;
+    width: 15vh;
     float: left;
-}
-
-#logo {
-    max-width: 100%;
 }
 #titre {
     padding-top: 2%;
     font-size: 190%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #phraseTitre {
     padding-bottom: 2%;
     font-size: 80%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
 
@@ -49,13 +45,11 @@ body {
 /* MENU MENU MENU */
 
 #menu {
-    width: 100%;
     background-color: rgb(95, 95, 95);
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     margin-bottom: 0;
-    z-index: 2;
 }
 
 #menu > ul {
@@ -76,7 +70,7 @@ body {
     margin-right: 2%;
     background-color: teal;
     color: white;
-    margin-top: 0;
+    box-shadow: 2px 2px 10px red(5, 94, 105);
 }
 
 #menu li {
@@ -85,13 +79,14 @@ body {
 
 #menu > ul > li > a {
     padding: 15px 30px;
-    color: #FFF;
+    color:white;
 }
 
 #menu a {
     display: inline-block;
     text-decoration: none;
 }
+
 
 #menu li a:hover{
     background-color: white;
@@ -116,7 +111,6 @@ body {
     color : grey;
     user-select: none;
     text-align: center;
-
 }
 
 #caroussel{
@@ -127,14 +121,16 @@ body {
     margin-right : 10%; 
     position: relative;
     user-select: none;
-    min-width: 600px;
     margin-bottom: 2%;
+    max-width: 100%;
+
 }
 
 #caroussel1{
     text-align: center;
     margin-left: 3%;
     margin-right: 3%;
+    max-width: 100%;
 }
 #before{
     box-shadow: 2px 2px 10px rgb(190, 190, 190);    
@@ -183,6 +179,9 @@ body {
 
 }
 
+#before:hover, #next:hover {
+    background-color: rgb(0, 71, 71);
+}
 /* design stat button */
 
 #input_stat {
@@ -229,41 +228,36 @@ body {
     color: white;
     font-weight: bold;
 }
+
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+/* INFO INFO INFO INFO INFO INFO INFO */
+
 /* DESINGN INFORMATION DIV */
 
 #information {
     background-color:rgb(175, 88, 88);
     display: flex;
+    flex-wrap: wrap;
 }
 
 #information div {
     padding :3%;
     text-align: center;
     color: white;
-    min-width: 200px;
 }
 
-#qui {
-    flex: auto;
+#qui, #contact, #carte {
+    flex: 33.33;
+    display: inline-block;
 }
-
-#contact{
-    flex :auto;
-}
-
-#carte {
-    flex: auto;
-}
-
 
 #information  h3 {
     border-bottom: rgb(255, 159, 159) 1px solid;
     padding-bottom: 4%;
     color: rgb(255, 159, 159);
-
-
 }
-
 
 #information div p {
     padding-top: 3%;
@@ -286,9 +280,63 @@ body {
 }
 
 #name_web_site img {
-    width: 3%;
+    width: 9vh;
 }
 
 #name_web_site p {
     vertical-align: middle;
+}
+
+/* Bouton retour haut de page*/
+
+#fleche {
+    color: white;
+    text-align: center;
+    font-size: 4vh;
+    padding: 10px;
+    padding-bottom: 0%;
+    background-color: rgba(128, 128, 128, 0.699);
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+}
+
+#fleche:hover {
+    background-color: grey;
+}
+
+@media (max-width: 906px){
+    * {
+        box-sizing: border-box;
+    }
+
+    body{
+		width: auto;
+		margin: 0;
+		padding: 0;
+    }
+    
+    /* MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE*/
+    /* MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE*/
+    /* MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE*/
+
+    #menu ul li a {
+        font-size: 2.2vh;
+    }
+        
+    /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+    /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+    /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+    #information div {
+        font-size: 2.3vh;
+    }
+
+}
+
+@media (max-width: 589px){
+    #qui, #contact, #carte {
+        flex: 50%;
+    }
 }
