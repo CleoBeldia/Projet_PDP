@@ -6,34 +6,50 @@ let d = 0;
 let id_graph = 'L1';
 let c_carou;
 let i;
+let affich_graph = 0;
 
 //canvas presentation
+window.onresize = function(){
+    if (c<=1 && affich_graph == 0) {
+        c_p();
+    }
+
+    else if (c > 1 && affich_graph == 0){
+        c_p();
+    }
+}  
+
 let c_p = function() {
+    let width_window = window.innerWidth;
+    let height_window = window.innerHeight;
+
     if (c <= 1){
-        c_pres = document.getElementById('canvas_presentation').getContext('2d');
+        canvas = document.getElementById('canvas_presentation');
+        canvas.height = height_window/1.8;
+        canvas.width = width_window/1.8;
+        c_pres = canvas.getContext('2d');
     }
     else if (c > 1) {
         let cnva = document.getElementById("caroussel1");
         cnva.innerHTML = "";
         c_pres = document.createElement('canvas');
         c_pres.setAttribute("id",'canvas_presentation');
-        c_pres.setAttribute("width",600);
-        c_pres.setAttribute("height",400);
+        c_pres.setAttribute("width",width_window/1.8);
+        c_pres.setAttribute("height",height_window/1.8);
         cnva.appendChild(c_pres);
         c_pres = document.getElementById('canvas_presentation').getContext('2d');
     }
-
-    let fontSize = 20;
-    c_pres.font = fontSize + "px Arial";
-    c_pres.fillStyle = "grey";
+    let taille = width_window/50;
+    c_pres.font = taille + "px Arial";
+    c_pres.fillStyle = "black";
     c_pres.textAlign = "center";
 
-    if (c < 1){
-        c_pres.fillText('Please upload the csv file and click on GO to visualize graphs', 600/2,400/2);
+    if (c <= 1){
+        c_pres.fillText('Please upload the csv file and click on GO to visualize graphs',canvas.width/2,canvas.height/2);
     }
     
     else if (c > 1){
-        c_pres.fillText('Click on GO to visualize graphs', 600/2,400/2);
+        c_pres.fillText('Click on GO to visualize graphs', width_window/3.8,height_window/3.8);
     }
 }
 
@@ -42,19 +58,16 @@ it takes the value of column 1 and last colum and put them into arrays */
 
 window.onload = function () {
     c_p();
-    console.log('ok ok');
     let f = document.getElementById('fileUpload');
     f.onchange = function () {
+        affich_graph = 0;
         i = 0;
         c_carou = 0;
         c = c + 1; 
-        console.log('changer c = ',c);
         canvas_array = [];
         DATA = [];
         LAND =[];
-       
         c_p()
-        console.log('dac');
         let file = f.files[0];
         name_file = file.name;
 
@@ -63,6 +76,7 @@ window.onload = function () {
 
         fr = new FileReader();
         fr.onload = function (event) {
+            affich_graph = 0;
             let csv = event.target.result;
             DATA = [];
             //split and get the rows in an array
@@ -82,6 +96,7 @@ window.onload = function () {
 }
 
 function Process() {
+    affich_graph = 1;
 
     let LM_array = [];
     let mean_array = [];
@@ -182,28 +197,21 @@ function mean(list){
 }
 
 //caroussel
-console.log('id graph', id_graph);
-
-
 let changeIndex= function(id) {
     if (c_carou > 0){
-        console.log('i', i);
         let cnva = document.getElementById("caroussel1");
         if (canvas_array.length !=0){
             if (id === "previous") {
                 i = (i - 1) % canvas_array.length;
-                console.log('i apres', i);
 
                 if (i < 0) {
                     i = canvas_array.length-1 ;
-                    console.log('i apres apres', i);
                 }
             }
             else {
                 i = (i+1) % canvas_array.length;
             }
             id_graph = canvas_array[i].id;
-            console.log('id graph', id_graph);
             cnva.innerHTML = "";
             changeImage(i);
         }
