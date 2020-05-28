@@ -1,6 +1,7 @@
 * {
     margin : 0; 
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -26,23 +27,17 @@ body {
 
 #logo {
     z-index: 0;
-    width: 110px;
+    width: 15vh;
     float: left;
-}
-
-#logo {
-    max-width: 100%;
 }
 #titre {
     padding-top: 2%;
     font-size: 190%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #phraseTitre {
     padding-bottom: 2%;
     font-size: 80%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
 
@@ -50,7 +45,6 @@ body {
 /* MENU MENU MENU */
 
 #menu {
-    width: 100%;
     background-color: rgb(95, 95, 95);
     position: -webkit-sticky;
     position: sticky;
@@ -81,12 +75,11 @@ body {
 
 #menu li {
     list-style-type: none;
-
 }
 
 #menu > ul > li > a {
     padding: 15px 30px;
-    color: #FFF;
+    color:white;
 }
 
 #menu a {
@@ -101,6 +94,7 @@ body {
 }
 
 
+
 #menu #landmarks a {
     background-color: white;
     color: teal;
@@ -110,11 +104,6 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY */
 /* BODY BODY BODY BODY BODY BODY BODY */
 /* BODY BODY BODY BODY BODY BODY BODY */
-
-#canvas {
-    border: 1.5px dashed grey;
-    text-align: center;
-}
 
 #bodyPage { 
     margin-top: 0; 
@@ -144,9 +133,6 @@ body {
     display : none;
 }
 
-#labelb {
-    margin-top: 3%;
-}
 .input_it{
     color : white;
     border : rgb(143, 142, 142) 1px solid;
@@ -192,6 +178,12 @@ body {
 }
 
 /* PARTIE BLANCHE AVEC IMAGE */
+
+
+#canvas {
+    border: 1.5px dashed grey;
+    text-align: center;
+}
 
 #div {
     margin-bottom: 3%;
@@ -382,42 +374,36 @@ td {
     width: 5%;
 }
 
+
 /* INFO INFO INFO INFO INFO INFO INFO */
 /* INFO INFO INFO INFO INFO INFO INFO */
 /* INFO INFO INFO INFO INFO INFO INFO */
 /* INFO INFO INFO INFO INFO INFO INFO */
 
+/* DESINGN INFORMATION DIV */
+
 #information {
     background-color:rgb(175, 88, 88);
     display: flex;
+    flex-wrap: wrap;
 }
 
 #information div {
     padding :3%;
     text-align: center;
     color: white;
-    min-width: 200px;
 }
 
-#qui {
-    flex: auto;
+#qui, #contact, #carte {
+    flex: 33.33;
+    display: inline-block;
 }
-
-#contact{
-    flex :auto;
-}
-
-#carte {
-    flex: auto;
-}
-
 
 #information  h3 {
     border-bottom: rgb(255, 159, 159) 1px solid;
     padding-bottom: 4%;
     color: rgb(255, 159, 159);
 }
-
 
 #information div p {
     padding-top: 3%;
@@ -432,19 +418,15 @@ td {
     padding-top: 2%;
     display: block;
 }
-
-/*LOGO FIN LOGO FIN LOGO FIN LOGO*/
-/*LOGO FIN LOGO FIN LOGO FIN LOGO*/
-
 #name_web_site {
     text-align: center;
-    padding-bottom: 1%;
     background-color: rgb(175, 88, 88);
     color: white;
+    padding-bottom: 1%;
 }
 
 #name_web_site img {
-    width: 3%;
+    width: 9vh;
 }
 
 #name_web_site p {
@@ -456,7 +438,7 @@ td {
 #fleche {
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 4vh;
     padding: 10px;
     padding-bottom: 0%;
     background-color: rgba(128, 128, 128, 0.699);
@@ -469,4 +451,56 @@ td {
 
 #fleche:hover {
     background-color: grey;
+}
+
+@media (max-width: 872px){
+    * {
+        box-sizing: border-box;
+    }
+
+    body{
+		width: auto;
+		margin: 0;
+		padding: 0;
+    }
+    
+    /* MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE*/
+    /* MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE MEDIA-TITLE*/
+
+    #menu ul li a {
+        font-size: 2.2vh;
+    }
+    
+    /* MEDIA-BODY MEDIA-BODY MEDIA-BODY MEDIA-BODY */
+    /* MEDIA-BODY MEDIA-BODY MEDIA-BODY MEDIA-BODY */
+    
+    #boutons_import{
+        display: inline-flex;
+    }
+
+    .input_it{
+        margin-top : 0%;
+        margin-bottom: 0%;
+        padding-top:0% ;
+        padding-bottom:0% ;
+        padding: 3%;
+    }
+    
+    #labelb, #labelc{
+        margin-right: 2%;
+    }
+
+
+    /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+    /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+    #information div {
+        font-size: 2.3vh;
+    }
+
+}
+
+@media (max-width: 589px){
+    #qui, #contact, #carte {
+        flex: 50%;
+    }
 }
