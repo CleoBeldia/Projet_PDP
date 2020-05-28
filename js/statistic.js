@@ -41,7 +41,7 @@ let c_p = function() {
     }
     let taille = width_window/50;
     c_pres.font = taille + "px Arial";
-    c_pres.fillStyle = "black";
+    c_pres.fillStyle = "grey";
     c_pres.textAlign = "center";
 
     if (c <= 1){
