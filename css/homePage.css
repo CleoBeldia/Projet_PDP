@@ -256,6 +256,7 @@ th p {
 }
 #pres_beetles div {
     text-align: justify;
+    width: 100%;
 }
 
 #pres_beetles div img {
@@ -265,7 +266,7 @@ th p {
     width: auto;
     margin-top: 2%;
     margin-bottom: 2%;
-
+    margin : 2%; 
 }
 
 #anatomy {
@@ -477,6 +478,7 @@ display: none;
     #information div {
         font-size: 2.3vh;
     }
+
 
 
 
