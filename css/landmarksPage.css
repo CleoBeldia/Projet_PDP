@@ -133,6 +133,7 @@ body {
     display : none;
 }
 
+
 .input_it{
     color : white;
     border : rgb(143, 142, 142) 1px solid;
@@ -151,8 +152,12 @@ body {
 }
 
 #uploadImage {
-    padding-top : 7%;
-    padding-bottom : 7%;
+    margin: 1%;
+}
+
+#p_upload_image{
+    width: 192px;
+    height: 192px;
 }
 
 #reset {
@@ -488,6 +493,11 @@ td {
     
     #labelb, #labelc{
         margin-right: 2%;
+    }
+
+    #uploadImage {
+        width: 192px;
+        height: 192px;
     }
 
 
