@@ -6,7 +6,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
 -->
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="utf-8"/>
         <meta name="Keywords" content="beetle" /> 
@@ -19,7 +19,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
     <body>
         <div id = 'head'>
             <div id = 'title'>
-                <img id= 'logo' src='images/beetleLogo.png'/>
+                <img alt='logo_beetle' id= 'logo' src='images/beetleLogo.png'/>
                 <p id = 'titre'>THE BEETLES</p>
                 <p id = 'phraseTitre' >Giving representations to your beetle</p>
             </div> 
@@ -47,7 +47,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
                 <input class ='choix' id='inputImage' type='file' multiple='true' accept='.JPG' onchange='loadFile(event)'>
                 <input class ='choix' id='inputTps' type='file' accept = '.TPS' onclick="color('labelb')">
                 <input class ='choix' id='inputTps1' type='file' accept = '.TPS' onclick="color('labelc')" >
-                <p><img id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
+                <p><img alt='imported_image' id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
                  
                 <input id='reset' type="button" value = "RESET" onclick="history.go(0)" />
 
@@ -82,7 +82,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
 
                 <div id='total_white'>
                     <div id='canvas_landmark'>
-                        <img id="dragdroplogo" src="images/dragdrop.png" alt="The Scream">
+                        <img id="dragdroplogo" src="images/dragdrop.png" alt="drop_image">
                         <div>
                             <p id='div'   ondrop="drop(event)" ondragover="allowDrop(event)" >
                                 <canvas id='canvas' width="384" height="384"></canvas>
@@ -141,7 +141,6 @@ SCRIPT HTML DE LA PAGE LANDMARKS
         
         <div id = 'information'>
             <div id='qui'>
-                <!--<img src='images/about.png'/>-->
                 <h3>Who are we ?</h3>
                 <p>Maram al Hassan</p>
                 <p>Cleo Berrehail</p>
@@ -150,7 +149,6 @@ SCRIPT HTML DE LA PAGE LANDMARKS
             </div>
 
             <div id='contact'>
-                <!--<img src='images/mail.png'/>-->
                 <h3>Contact</h3>
                 <a class='infoMail' href="mailto:maram.al-hassan@u-bordeaux.fr">maram.al-hassan@u-bordeaux.fr</a><br>
                 <a class='infoMail' href="mailto:cleo.berrehail@u-bordeaux.fr">cleo.berrehail@u-bordeaux.fr</a><br>
@@ -159,7 +157,6 @@ SCRIPT HTML DE LA PAGE LANDMARKS
             </div>
 
             <div id='carte'>
-                <!--<img src='images/local.png'/>-->
                 <h3>Find Us</h3>
                 <p>University of Bordeaux</p>
                 <p>351 cours de la Libération</p>
@@ -172,7 +169,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
         </div>
 
         <div id='name_web_site'>
-            <img src='images/beetleLogo.png'/>
+            <img alt='logo_beetle' src='images/beetleLogo.png'/>
             <p>&copyThe beetles</p>
         </div>
 
