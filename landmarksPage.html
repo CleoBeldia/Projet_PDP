@@ -27,12 +27,9 @@ SCRIPT HTML DE LA PAGE LANDMARKS
 
         <div id='menu'>
             <ul>
-                <li id='statistic'><a href="statisticPage.html">Statistics</a>
-                </li>
-                <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a>
-                </li>
+                <li id='statistic'><a href="statisticPage.html">Statistics</a></li>
+                <li id='landmarks'><a href='landmarksPage.html'>Landmarks</a></li>
                 <li id='home'><a href='homePage.html'>Home</a></li>
-            </li>
             </ul> 
         </div>
         
@@ -44,10 +41,10 @@ SCRIPT HTML DE LA PAGE LANDMARKS
                     <p id='labela' class='input_it' ><label for='inputImage' >Choose an image</label></p>                  
                 </div>
 
-                <input class ='choix' id='inputImage' type='file' multiple='true' accept='.JPG' onchange='loadFile(event)'>
+                <input class ='choix' id='inputImage' type='file' accept='.JPG' onchange='loadFile(event)'>
                 <input class ='choix' id='inputTps' type='file' accept = '.TPS' onclick="color('labelb')">
                 <input class ='choix' id='inputTps1' type='file' accept = '.TPS' onclick="color('labelc')" >
-                <p><img alt='imported_image' id='uploadImage' width="192" height="192" draggable="true" draggable="true" ondragstart="drag(event)"></p>
+                <p><img alt='imported_image' src='' id='uploadImage' width="192" height="192" draggable="true" ondragstart="drag(event)"></p>
                  
                 <input id='reset' type="button" value = "RESET" onclick="history.go(0)" />
 
@@ -63,8 +60,8 @@ SCRIPT HTML DE LA PAGE LANDMARKS
                     <p id='do_land' class='protocole'><span class='nb_steps'>STEP 4</span>    click on the buttons below to display the landmarks</p>
                     <p id='do_coor' class='protocole'><span class='nb_steps'>STEP 5</span>    check the coordinates of landmarks below the image</p>
                     <p id='do_reset' class='protocole'><span class='nb_steps'>STEP 6</span>  <span id='load_gras'>Load your image</span> and <span id='reset_gras'>reset</span> to use an other one</p>
-                    <p id='do_war_image' class='protocole'><img id='image_frise_att' src='images/warning.png'>YOU HAVE TO UPLOAD AND DROP THE <span> IMAGE </span> FIRST <img src='images/warning.png'></p>
-                    <p id='do_war_tps' class='protocole'><img id='image_frise_att' src='images/warning.png'>YOU HAVE TO UPLOAD THE <span> TWO TPS FILES </span> FIRST<img src='images/warning.png'></p>
+                    <p id='do_war_image' class='protocole'><img alt='warning' src='images/warning.png'>YOU HAVE TO UPLOAD AND DROP THE <span> IMAGE </span> FIRST <img alt='warning' src='images/warning.png'></p>
+                    <p id='do_war_tps' class='protocole'><img alt='warning' src='images/warning.png'>YOU HAVE TO UPLOAD THE <span> TWO TPS FILES </span> FIRST<img src='images/warning.png' alt='warning'></p>
 
 
 
@@ -94,7 +91,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
                     </div>
                     <div id='data'>
                         <table id='values_table'>
-                                <tr id='column' >
+                                <tr >
                                     <th class='column_border_none'>Landmarks</th>
                                 </tr>
                                 <tr>
@@ -103,7 +100,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
                         </table>
 
                         <table id='predicted_table'>
-                                <tr id='column'>
+                                <tr>
                                     <th colspan="2">Predicted</th>
                                 </tr>
                                 <tr>
@@ -170,7 +167,7 @@ SCRIPT HTML DE LA PAGE LANDMARKS
 
         <div id='name_web_site'>
             <img alt='logo_beetle' src='images/beetleLogo.png'/>
-            <p>&copyThe beetles</p>
+            <p>&copy;The beetles</p>
         </div>
 
         <a id='fleche' href="#">&#8963;</a>
