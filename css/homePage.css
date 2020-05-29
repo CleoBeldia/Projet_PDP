@@ -104,13 +104,15 @@ body {
 /* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
 /* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
 /* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
-/* BODY BODY BODY BODY BODY BODY BODY BODY BODY*/
 
 #bodyPage {
     margin-bottom: 1%;
     width: auto;
 }
+
 /* WELCOME DIV */
+/* WELCOME DIV */
+
 #welcome_div{
     background-color: teal;
     text-align: center;
@@ -155,6 +157,8 @@ body {
 }
 
 /*presentation div*/
+/*presentation div*/
+
 .title_about{
     text-align: center;
     font-size: 3vw;
@@ -202,7 +206,9 @@ body {
 }
 
 
-    /*table*/
+/*table*/
+/*table*/
+
 th p {
     padding: 3vh;
     color: teal;
@@ -217,6 +223,8 @@ th p {
 }
 
 /*div machine learning*/
+/*div machine learning*/
+
 #pres_machine {
     color:rgb(90, 90, 90) ;
     text-align: justify;
@@ -224,6 +232,8 @@ th p {
 }
 
 /*div beetles*/
+/*div beetles*/
+
 #pres_beetles{
     color:rgb(90, 90, 90) ;
     text-align: justify;
@@ -285,8 +295,6 @@ th p {
 
 }
 
-
-
 /* INFO INFO INFO INFO INFO INFO INFO */
 /* INFO INFO INFO INFO INFO INFO INFO */
 /* INFO INFO INFO INFO INFO INFO INFO */
@@ -346,6 +354,8 @@ th p {
 }
 
 /* Bouton retour haut de page*/
+/* Bouton retour haut de page*/
+
 
 #fleche {
     color: white;
@@ -366,7 +376,12 @@ th p {
 }
 
 /*SIDE BAR*/
+/*SIDE BAR*/
+/*SIDE BAR*/
+
 /*old side bar*/
+/*old side bar*/
+
 #side_bar {
 display: none;
 }
@@ -390,6 +405,8 @@ display: none;
 }
 
 /*new side bar*/
+/*new side bar*/
+
 #new_side{
     position: fixed;
     bottom: 0;
@@ -478,9 +495,6 @@ display: none;
     #information div {
         font-size: 2.3vh;
     }
-
-
-
 
 }
 
