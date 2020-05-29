@@ -10,7 +10,8 @@ let open = function(){
     document.getElementById('new_side').style.display = 'block';
 }
 
-//Fonction permettant l'affichage du bouton 'LINKS' et la suppression de la visibilité de l'élément contenant les liens utiles 
+//Fonction permettant l'affichage du bouton 'LINKS' et la suppression de la visibilité de l'élément contenant les liens utiles
+let close = function(){
     document.getElementById('old_side').style.display = 'block';
     document.getElementById('new_side').style.display = 'none';
 }
