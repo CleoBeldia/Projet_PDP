@@ -1,3 +1,8 @@
+/* Master Bio-informatique 2020 */
+/* Projet PDP */
+/* Berrehail - Al Hassan - Ergun - Hassainia */
+/* SCRIPT JS DE LA PAGE LANDMARKS */
+
 //// Variables
 // Listes permettant de stocker les coordonées provenant des deux fichiers TPS
 let x = [];
