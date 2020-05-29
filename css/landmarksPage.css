@@ -128,6 +128,8 @@ body {
 }
 
 /*CSS PARTIE GAUCHE BLEU*/
+/*CSS PARTIE GAUCHE BLEU*/
+
 
 .choix {
     display : none;
@@ -183,6 +185,7 @@ body {
 }
 
 /* PARTIE BLANCHE AVEC IMAGE */
+/* PARTIE BLANCHE AVEC IMAGE */
 
 
 #canvas {
@@ -211,11 +214,14 @@ body {
 }
 
 /*desing intérieur canvas*/
+/*desing intérieur canvas*/
+
 
 #dragdroplogo {
     display : none; 
 }
 
+/* design checkbox */
 /* design checkbox */
 
 .inputCheckBox{
@@ -260,7 +266,7 @@ body {
 }
 
 /*partie blanc partage */
-
+/*partie blanc partage */
 
 #data {
     margin-top: 4%;
@@ -278,6 +284,8 @@ text-align: center;
 
 
 /*design tableau */
+/*design tableau */
+
 table {
     border: 0.1px teal solid;
     border-collapse: collapse;
@@ -308,7 +316,9 @@ td {
 .column_border_none {
     border-bottom-color: teal;
 }
-/* desing TO DO */
+
+/* protocole */
+/* protocole */
 
 #frise{
     position: -webkit-sticky;
@@ -439,6 +449,8 @@ td {
 }
 
 /* Bouton retour haut de page*/
+/* Bouton retour haut de page*/
+
 
 #fleche {
     color: white;
@@ -503,6 +515,7 @@ td {
 
     /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
     /* MEDIA-INFO MEDIA-INFO MEDIA-INFO MEDIA-INFO*/
+	
     #information div {
         font-size: 2.3vh;
     }
