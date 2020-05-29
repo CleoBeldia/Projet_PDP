@@ -1,3 +1,8 @@
+/* Master Bio-informatique 2020 */
+/* Projet PDP */
+/* Berrehail - Al Hassan - Ergun - Hassainia */
+/* SCRIPT JS DE LA PAGE STATISTICS */
+
 ///Variables
 // listes permettant le stockage des données provenant du fichier csv
 let DATA = [];
